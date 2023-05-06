@@ -1,8 +1,9 @@
-/* .house_article {
-  gap: 1rem;
-  box-sizing: border-box;
-  padding: 4rem;
-}*/
+.house_article {
+  justify-content: center;
+  align-items: center;
+  max-width: 19rem;
+  text-align: center;
+}
 
 .house_pic {
   width: 18rem;

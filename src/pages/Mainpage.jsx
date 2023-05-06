@@ -35,8 +35,8 @@ export default function Mainpage() {
         <p>Please select a house</p>
         <span className='circular-dots-border'></span>
       </section>
-      <section className="houses_main row justify-content-between align-items-center">
-        <div className="arrow left col-1" onClick={handleClickLeftArrow}>
+      <section className="houses_main d-flex align-items-center justify-content-between">
+        <div className="arrow left" onClick={handleClickLeftArrow}>
           <img src="https://img.icons8.com/sf-regular/48/null/sort-left.png" alt="arrow left" />
         </div>
         {houses.slice(visibleHouses - 3, visibleHouses).map((house) => (
@@ -48,7 +48,7 @@ export default function Mainpage() {
             description={house.description}
           />
         ))}
-        <div className="arrow right col-1" onClick={handleClickRightArrow}>
+        <div className="arrow right" onClick={handleClickRightArrow}>
           <img src="https://img.icons8.com/sf-regular/48/null/sort-right.png" alt="arrow right" />  
         </div>
       </section>

@@ -21,11 +21,11 @@ nav {
 }
 
 .houses_main {
-  height: 70vh;
+  grid-row-start: 2;
+  grid-row-end: 5;
 }
 
 .header_main {
-  height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,4 +39,10 @@ nav {
   border-right: none;
   border-width: 0.2rem;
   width: 10rem !important;
+}
+
+.main_page_container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
 }

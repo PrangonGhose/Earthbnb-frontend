@@ -8,7 +8,7 @@ export default function House(props) {
         id, name, description, pictures,
     } = props;
     return (
-        <article className='house_article flex-column col-3'>
+        <article className='house_article flex-column'>
             <img src={pictures} alt="House picture" className='house_pic img-fluid' />
             <h3>{name}</h3>
             <span className="dot_line"></span>
