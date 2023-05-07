@@ -8,10 +8,10 @@ export default function House(props) {
         id, name, description, pictures,
     } = props;
     return (
-        <article className='house_article flex-column'>
-            <img src={pictures} alt="House picture" className='house_pic img-fluid' />
-            <h3>{name}</h3>
-            <span className="dot_line"></span>
+        <article className='house_article'>
+            <img src={pictures} alt="House picture" className='house_pic img-fluid mb-3' />
+            <h5>{name}</h5>
+            <span className='circular-dots-border mb-3 mt-2'></span>
             <p>{description}</p>
             <Socials />
         </article>
