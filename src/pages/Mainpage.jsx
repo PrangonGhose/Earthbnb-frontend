@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import { getHouses } from '../redux/house/house';
 import House from '../components/House';
-import { v4 as uuidv4 } from 'uuid';
-import '../css/arrow.css'
+import '../css/arrow.css';
 
 export default function Mainpage() {
-
   const dispatch = useDispatch();
   const [hasHousesToLeft, setHasHousesToLeft] = useState(false);
   const [hasHousesToRight, setHasHousesToRight] = useState(true);
@@ -34,14 +33,24 @@ export default function Mainpage() {
   };
 
   return (
-    <div className='main_page_container col-10 container-fluid p-0'>
-      <section className='header_main'>
+    <div className="main_page_container col-10 container-fluid p-0">
+      <section className="header_main">
         <h1>Latest luxury houses</h1>
         <p>Please select a house</p>
-        <span className='circular-dots-border'></span>
+        <span className="circular-dots-border" />
       </section>
       <section className="houses_main d-flex align-items-center justify-content-between">
-        <div className={`arrow left ${hasHousesToLeft ? 'has-houses' : 'no-houses'}`} onClick={handleClickLeftArrow}>
+        <div
+          className={`arrow left ${hasHousesToLeft ? 'has-houses' : 'no-houses'}`}
+          onClick={handleClickLeftArrow}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter') {
+              handleClickLeftArrow();
+            }
+          }}
+          role="button"
+          tabIndex="0"
+        >
           <img src="https://img.icons8.com/sf-regular/48/null/sort-left.png" alt="arrow left" />
         </div>
         {houses.slice(visibleHouses - 3, visibleHouses).map((house) => (
@@ -53,10 +62,20 @@ export default function Mainpage() {
             description={house.description}
           />
         ))}
-        <div className={`arrow right ${hasHousesToRight ? 'has-houses' : 'no-houses'}`} onClick={handleClickRightArrow}>
-          <img src="https://img.icons8.com/sf-regular/48/null/sort-right.png" alt="arrow right" />  
+        <div
+          className={`arrow right ${hasHousesToRight ? 'has-houses' : 'no-houses'}`}
+          onClick={handleClickRightArrow}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter') {
+              handleClickRightArrow();
+            }
+          }}
+          role="button"
+          tabIndex="0"
+        >
+          <img src="https://img.icons8.com/sf-regular/48/null/sort-right.png" alt="arrow right" />
         </div>
       </section>
     </div>
-  )
+  );
 }

@@ -5,7 +5,9 @@
   color: #a8a8a8;
 }
 
-h1, h4, h5 {
+h1,
+h4,
+h5 {
   font-weight: 800 !important;
   color: black;
 }
@@ -35,7 +37,7 @@ nav {
 }
 
 .circular-dots-border {
-  border:3px dotted #e8e8e8;
+  border: 3px dotted #e8e8e8;
   border-bottom: none;
   border-left: none;
   border-right: none;
