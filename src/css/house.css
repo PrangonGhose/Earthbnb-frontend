@@ -1,4 +1,6 @@
 .house_article {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   max-width: 19rem;
@@ -6,5 +8,6 @@
 }
 
 .house_pic {
+  height: 16rem;
   width: 18rem;
 }

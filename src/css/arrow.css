@@ -1,0 +1,27 @@
+.arrow {
+  width: 5rem;
+}
+
+.arrow img {
+  filter: invert(100%);
+}
+
+.left {
+  display: flex;
+  justify-content: end;
+  padding: 1rem 1rem 1rem 0;
+  border-radius: 0 2rem 2rem 0;
+}
+
+.right {
+  padding: 1rem 0 1rem 1rem;
+  border-radius: 2rem 0 0 2rem;
+}
+
+.has-houses {
+  background-color: #97bf0e;
+}
+
+.no-houses {
+  background-color: #efefef;
+}
