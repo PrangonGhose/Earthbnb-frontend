@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+@font-face {
+  font-family: myFont;
+  src: url('../../assets/ExodusDemo-Striped.otf');
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../../assets/backgroud-splash.jpg');
+  background-size: cover;
+  z-index: -1;
+}
+
+.action-btn {
+  background-color: #8db600;
+  border: none;
+  padding: 15px;
+  border-radius: 25px;
+}
+
+.splash-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.main-splash-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(rgba(255, 127, 0, 0.9), rgba(239, 183, 0, 0.9));
+}
+
+.splash-title {
+  font-size: 70px;
+  font-weight: bolder;
+  color: #fff;
+}
+
+.logo-text {
+  font-family: myFont, sans-serif;
+}
+
+.splash-btn-container {
+  padding-bottom: 20%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
