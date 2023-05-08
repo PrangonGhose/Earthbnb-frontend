@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700;800&display=swap');
+
+* {
+  font-family: 'Fira Sans', sans-serif;
+  color: #a8a8a8;
+}
+
+h1,
+h4,
+h5 {
+  font-weight: 800 !important;
+  color: black;
+}
+
+.icon_img {
+  width: 30px;
+}
+
+.arrow img {
+  width: 1.5rem;
+}
+
+nav {
+  background-color: aquamarine;
+}
+
+.houses_main {
+  grid-row-start: 2;
+  grid-row-end: 5;
+}
+
+.header_main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.circular-dots-border {
+  border: 3px dotted #e8e8e8;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  border-width: 0.2rem;
+  width: 10rem !important;
+}
+
+.main_page_container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
