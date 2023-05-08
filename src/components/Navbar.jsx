@@ -25,18 +25,18 @@ function Navbar() {
     }
   }
   return (
-    <div className="gen-navbar-container">
+    <nav className="col-2 gen-navbar-container p-0">
       <div id="navbar" className="main-navbar-container">
         <div className="logo-container">
           <h1 className="logo-text nav-logo">Earthbnb</h1>
         </div>
         <div className="links-container">
           <ul className="nav-items">
-            <li><NavLink to="/home" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>All Properties</NavLink></li>
-            <li><NavLink to="/MakeAReservation" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Make a reservation</NavLink></li>
-            <li><NavLink to="/MyReservations" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>My reservations</NavLink></li>
-            <li><NavLink to="/AddProperty" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Add a property</NavLink></li>
-            <li><NavLink to="/DeleteProperty" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Delete a property</NavLink></li>
+            <li><NavLink to="/home" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>HOUSES</NavLink></li>
+            <li><NavLink to="/MakeAReservation" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>RESERVE</NavLink></li>
+            <li><NavLink to="/MyReservations" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>MY RESERVATIONS</NavLink></li>
+            <li><NavLink to="/AddProperty" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>ADD A HOUSE</NavLink></li>
+            <li><NavLink to="/DeleteProperty" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>DELETE A HOUSE</NavLink></li>
           </ul>
         </div>
         <div className="footer">
@@ -56,7 +56,7 @@ function Navbar() {
         <img id="hide-arrow" src={arrow} className="arrow-img" alt="arrow" />
         <img id="show-arrow" src={disArrow} className="arrow-img" alt="arrow" />
       </button>
-    </div>
+    </nav>
   );
 }
 

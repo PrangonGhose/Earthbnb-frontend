@@ -15,8 +15,7 @@ function App() {
   return (
     <div className="App container-fluid">
       <div className="row vh-100">
-        <nav className="col-2" />
-        {location.pathname !== '/' && location.pathname !== '/Register' && location.pathname !== '/Login' && <Navbar />}
+        {location.pathname !== '/' && location.pathname !== '/Register' && location.pathname !== '/Login' && <Navbar />} 
         <Routes>
           <Route exact path="/" element={<SplashScreen />} />
           <Route path="/home" element={<Mainpage />} />
