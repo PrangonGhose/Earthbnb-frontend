@@ -24,13 +24,21 @@
 
 .main-navbar-container {
   height: 100%;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   background-color: #fff;
   padding: 15px;
   padding-right: 0;
   box-shadow: 0 0 15px #d3d3d3;
+}
+
+#hide-arrow {
+  display: none;
+}
+
+.active-navbar {
+  display: flex;
 }
 
 .logo-container,

@@ -7,11 +7,22 @@ import gicon from '../assets/g-icon.png';
 import picon from '../assets/p-icon.png';
 import vicon from '../assets/v-icon.png';
 import arrow from '../assets/arrow.png';
+import disArrow from '../assets/dis-arrow.png';
 
 function Navbar() {
-  const navContainer = document.querySelector('#navbar');
   function hideMenu() {
-    navContainer.style.display = 'none';
+    const navContainer = document.querySelector('#navbar');
+    const showArrow = document.querySelector('#show-arrow');
+    const hideArrow = document.querySelector('#hide-arrow');
+    if (navContainer.classList.contains('active-navbar')) {
+      navContainer.classList.remove('active-navbar');
+      hideArrow.style.display = 'none';
+      showArrow.style.display = 'block';
+    } else {
+      navContainer.classList.add('active-navbar');
+      hideArrow.style.display = 'block';
+      showArrow.style.display = 'none';
+    }
   }
   return (
     <div className="gen-navbar-container">
@@ -41,7 +52,10 @@ function Navbar() {
           </div>
         </div>
       </div>
-      <button type="button" onClick={hideMenu} className="back-btn"><img src={arrow} className="arrow-img" alt="arrow" /></button>
+      <button type="button" onClick={hideMenu} className="back-btn">
+        <img id="hide-arrow" src={arrow} className="arrow-img" alt="arrow" />
+        <img id="show-arrow" src={disArrow} className="arrow-img" alt="arrow" />
+      </button>
     </div>
   );
 }
