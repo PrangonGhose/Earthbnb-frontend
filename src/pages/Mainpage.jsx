@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { getHouses } from '../redux/house/house';
 import House from '../components/House';
-import '../css/arrow.css';
+import '../components/stylesheets/arrow.css'
 
 export default function Mainpage() {
   const dispatch = useDispatch();
@@ -33,7 +33,7 @@ export default function Mainpage() {
   };
 
   return (
-    <div className="main_page_container col-10 container-fluid p-0">
+    <div className="main_page_container container-fluid p-0">
       <section className="header_main">
         <h1>Latest luxury houses</h1>
         <p>Please select a house</p>
