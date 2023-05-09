@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './stylesheets_page/HouseDetail.css';
 import { AiOutlineRight, AiOutlineRightCircle } from 'react-icons/ai';
-import HideShowMenu from '../components/HideShowMenu';
 import color from '../assets/c-color.png';
 
 export default function HouseDetail() {
@@ -63,9 +62,6 @@ export default function HouseDetail() {
           </button>
         </article>
       </section>
-      <div className="menu-btn d-flex">
-        <HideShowMenu />
-      </div>
     </div>
 
   );
