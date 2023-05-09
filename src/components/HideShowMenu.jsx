@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import arrow from '../assets/arrow.png';
 import disArrow from '../assets/dis-arrow.png';
 
@@ -24,5 +24,5 @@ export default function HideShowMenu() {
       <img id="hide-arrow" src={arrow} className="arrow-img" alt="arrow" />
       <img id="show-arrow" src={disArrow} className="arrow-img" alt="arrow" />
     </button>
-  )
+  );
 }

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { getHouses } from '../redux/house/house';
 import House from '../components/House';
-import '../components/stylesheets/arrow.css'
+import '../components/stylesheets/arrow.css';
 
 export default function Mainpage() {
   const dispatch = useDispatch();

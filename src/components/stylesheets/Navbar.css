@@ -24,6 +24,7 @@
 
 .main-navbar-container {
   height: 100%;
+
   /* display: none; */
   flex-direction: column;
   justify-content: space-between;
