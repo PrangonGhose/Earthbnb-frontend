@@ -5,13 +5,14 @@ import MyReservations from './components/MyReservations';
 import MakeAReservation from './components/MakeAReservation';
 import AddProperty from './components/AddProperty';
 import DeleteProperty from './components/DeleteProperty';
+import Mainpage from './pages/Mainpage';
 import './App.css';
 
 function App() {
   const location = useLocation();
   return (
-    <div className="App container-fluid p-0">
-      <div className="d-flex p-0 vh-100">
+    <div>
+      <div>
         {location.pathname !== '/' && location.pathname !== '/Register' && location.pathname !== '/Login' && <Navbar />}
         <Routes>
           <Route exact path="/" element={<SplashScreen />} />
