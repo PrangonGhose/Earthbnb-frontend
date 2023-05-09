@@ -8,14 +8,13 @@ export default function House(props) {
   const {
     id, name, description, pictures,
   } = props;
-  console.log(id);
   return (
-    <NavLink to={`/house/${id}`} className="house-detail-link"> 
+    <NavLink to={`/house/${id}`} className="house-detail-link">
       <article className="house_article">
         <img src={pictures} alt="" className="house_pic img-fluid mb-3" />
         <h5>{name}</h5>
         <span className="circular-dots-border mb-3 mt-2" />
-        <p>{description}</p>
+        <p className="gray-text">{description}</p>
         <Socials />
       </article>
     </NavLink>
