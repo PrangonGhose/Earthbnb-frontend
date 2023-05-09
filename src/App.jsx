@@ -8,6 +8,7 @@ import MyReservations from './components/MyReservations';
 import MakeAReservation from './components/MakeAReservation';
 import AddProperty from './components/AddProperty';
 import DeleteProperty from './components/DeleteProperty';
+import HouseDetail from './pages/HouseDetail';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<SplashScreen />} />
           <Route path="/home" element={<Mainpage />} />
+          <Route exact path="/house/:id" element={<HouseDetail />} />
           <Route exact path="/makeareservation" element={<MakeAReservation />} />
           <Route exact path="/myreservations" element={<MyReservations />} />
           <Route exact path="/addproperty" element={<AddProperty />} />
