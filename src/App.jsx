@@ -16,7 +16,7 @@ function App() {
     <div className="App container-fluid p-0">
       <div className="d-flex p-0 vh-100">
         {location.pathname !== '/' && location.pathname !== '/Register' && location.pathname !== '/Login' && <Navbar />}
-        {location.pathname !== '/home' && <HideShowMenu />}
+        {location.pathname !== '/home' && location.pathname !== '/' && location.pathname !== '/Register' && location.pathname !== '/Login' && <HideShowMenu />}
         <Routes>
           <Route exact path="/" element={<SplashScreen />} />
           <Route path="/home" element={<Mainpage />} />

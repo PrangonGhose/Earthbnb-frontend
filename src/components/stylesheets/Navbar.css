@@ -1,10 +1,7 @@
-/* .gen-navbar-container {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-} */
+.logo-text {
+  font-family: myFont, sans-serif;
+  color: #321811 !important;
+}
 
 .arrow-img {
   width: 15px;
@@ -24,8 +21,6 @@
 
 .main-navbar-container {
   height: 100%;
-
-  /* display: none; */
   flex-direction: column;
   justify-content: space-between;
   background-color: #fff;
