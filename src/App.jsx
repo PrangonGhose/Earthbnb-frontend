@@ -12,7 +12,7 @@ function App() {
   const location = useLocation();
   return (
     <div className="App container-fluid p-0">
-      <div className='d-flex p-0 vh-100'>
+      <div className="d-flex p-0 vh-100">
         {location.pathname !== '/' && location.pathname !== '/Register' && location.pathname !== '/Login' && <Navbar />}
         <Routes>
           <Route exact path="/" element={<SplashScreen />} />
