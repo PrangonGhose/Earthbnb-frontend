@@ -1,6 +1,4 @@
 import pic from '../assets/username.png';
-import pwPic from '../assets/password-icon.png';
-import ePic from '../assets/email.png';
 import './stylesheets/SplashScreen.css';
 
 function SplashScreen() {
@@ -20,15 +18,7 @@ function SplashScreen() {
             <h1 className="form-title">Create Account</h1>
             <div className="username-input-container">
               <img src={pic} className="username-img" alt="username-icon" />
-              <input className="username-input" type="email" placeholder="Email" />
-            </div>
-            <div className="password-input-container">
-              <img src={ePic} className="password-img" alt="username-icon" />
-              <input className="password-input" type="email" placeholder="Email" />
-            </div>
-            <div className="reg-password-input-container">
-              <img src={pwPic} className="password-img" alt="username-icon" />
-              <input className="reg-password-input" type="password" placeholder="Password" />
+              <input className="username-input" type="name" placeholder="Username" />
             </div>
             <button type="submit" className="splash-action-btn marg-btn">Sign Up</button>
           </form>
@@ -38,13 +28,8 @@ function SplashScreen() {
             <h1 className="form-title">Sign in</h1>
             <div className="username-input-container">
               <img src={pic} className="username-img" alt="username-icon" />
-              <input className="username-input" type="email" placeholder="Email" />
+              <input className="username-input" type="name" placeholder="Username" />
             </div>
-            <div className="password-input-container">
-              <img src={pwPic} className="password-img" alt="username-icon" />
-              <input className="password-input" type="password" placeholder="Password" />
-            </div>
-            <a className="splash-action-link" href="https://github.com/PrangonGhose/Earthbnb-frontend">Forgot your password?</a>
             <button type="submit" className="splash-action-btn">Sign In</button>
           </form>
         </div>
