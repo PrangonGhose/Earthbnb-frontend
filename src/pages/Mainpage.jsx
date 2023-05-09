@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { getHouses } from '../redux/house/house';
 import House from '../components/House';
 import '../components/stylesheets/arrow.css';
+import './stylesheets_page/Mainpage.css';
 
 export default function Mainpage() {
   const dispatch = useDispatch();
