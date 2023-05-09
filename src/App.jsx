@@ -12,6 +12,42 @@ import './css/App.css';
 
 function App() {
   const location = useLocation();
+
+  const loginStatus = async () => {
+    if (sessionStorage.getItem('earthbnb_user')) {
+      let temp_user = JSON.parse(sessionStorage.getItem('earthbnb_user'))
+      const response = await fetch('http://localhost:3000/login/', {
+        method: 'POST',
+        headers: {
+          "Content-Type": 'application/json'
+        },
+        body: JSON.stringify({user: temp_user})
+      });
+
+      const data = await response.json();
+      if (data.logged_in) {
+        return {
+          isLoggedIn: true,
+          user: JSON.parse(sessionStorage.getItem('earthbnb_user'))
+        };
+      } else {
+        sessionStorage.removeItem('earthbnb_user');
+      }
+    }
+    return {
+      isLoggedIn: false,
+      user: {}
+    };
+  };
+
+  const handleLogin = async (data) => {
+    sessionStorage.setItem('earthbnb_user', JSON.stringify(data.user));
+  };
+
+  const handleLogout = () => {
+    sessionStorage.removeItem('earthbnb_user');
+  };
+
   return (
     <div className="App container-fluid">
       <div className="row vh-100">
@@ -21,11 +57,11 @@ function App() {
           <Route exact path="/" element={<SplashScreen />} />
           <Route path="/home" element={<Mainpage />} />
           <Route exact path="/makeareservation" element={<MakeAReservation />} />
-          <Route exact path="/myreservations" element={<MyReservations />} />
+          <Route exact path="/myreservations" element={<MyReservations loginStatus={ loginStatus } />} />
           <Route exact path="/addproperty" element={<AddProperty />} />
           <Route exact path="/deleteproperty" element={<DeleteProperty />} />
-          <Route exact path="/register" element={<Register />} />
-          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/register" element={<Register loginStatus={ loginStatus } />} />
+          <Route exact path="/login" element={<Login handleLogin={ handleLogin } loginStatus={ loginStatus } />} />
         </Routes>
       </div>
     </div>
