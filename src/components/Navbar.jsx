@@ -6,8 +6,6 @@ import twicon from '../assets/tw-icon.png';
 import gicon from '../assets/g-icon.png';
 import picon from '../assets/p-icon.png';
 import vicon from '../assets/v-icon.png';
-// import arrow from '../assets/arrow.png';
-// import disArrow from '../assets/dis-arrow.png';
 
 function Navbar({ handleLogout }) { // eslint-disable-line
   // function hideMenu() {
@@ -53,10 +51,6 @@ function Navbar({ handleLogout }) { // eslint-disable-line
           </div>
         </div>
       </div>
-      {/* <button type="button" onClick={hideMenu} className="back-btn">
-        <img id="hide-arrow" src={arrow} className="arrow-img" alt="arrow" />
-        <img id="show-arrow" src={disArrow} className="arrow-img" alt="arrow" />
-      </button> */}
     </nav>
   );
 }
