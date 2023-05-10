@@ -32,12 +32,16 @@ export default function Reserve() {
               ))}
             </select>
             <div className="date-inputs">
-              <label htmlFor="start-date" className="text-white">Start Date: &#160;</label>
-              <input type="date" id="start-date" name="start-date" />
+              <label htmlFor="start-date" className="text-white">
+                Start Date: &#160;
+                <input type="date" id="start-date" name="start-date" />
+              </label>
             </div>
             <div className="date-inputs">
-              <label htmlFor="end-date" className="text-white">End Date: &#160;</label>
-              <input type="date" id="end-date" name="end-date" />
+              <label htmlFor="end-date" className="text-white">
+                End Date: &#160;
+                <input type="date" id="end-date" name="end-date" />
+              </label>
             </div>
             <button type="submit">Reserve Now</button>
           </div>
