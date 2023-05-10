@@ -17,7 +17,7 @@ function Navbar() {
         <div className="links-container">
           <ul className="nav-items">
             <li><NavLink to="/home" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>HOUSES</NavLink></li>
-            <li><NavLink to="/MakeAReservation" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>RESERVE</NavLink></li>
+            <li><NavLink to="/reserve" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>RESERVE</NavLink></li>
             <li><NavLink to="/MyReservations" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>MY RESERVATIONS</NavLink></li>
             <li><NavLink to="/AddProperty" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>ADD A HOUSE</NavLink></li>
             <li><NavLink to="/DeleteProperty" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>DELETE A HOUSE</NavLink></li>
