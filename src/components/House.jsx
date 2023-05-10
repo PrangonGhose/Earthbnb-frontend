@@ -1,7 +1,7 @@
 import React from 'react';
 import { string } from 'prop-types';
 import Socials from './Socials';
-import '../css/house.css';
+import './stylesheets/house.css';
 
 export default function House(props) {
   const {

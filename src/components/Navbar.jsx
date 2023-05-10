@@ -6,37 +6,37 @@ import twicon from '../assets/tw-icon.png';
 import gicon from '../assets/g-icon.png';
 import picon from '../assets/p-icon.png';
 import vicon from '../assets/v-icon.png';
-import arrow from '../assets/arrow.png';
-import disArrow from '../assets/dis-arrow.png';
+// import arrow from '../assets/arrow.png';
+// import disArrow from '../assets/dis-arrow.png';
 
 function Navbar() {
-  function hideMenu() {
-    const navContainer = document.querySelector('#navbar');
-    const showArrow = document.querySelector('#show-arrow');
-    const hideArrow = document.querySelector('#hide-arrow');
-    if (navContainer.classList.contains('active-navbar')) {
-      navContainer.classList.remove('active-navbar');
-      hideArrow.style.display = 'none';
-      showArrow.style.display = 'block';
-    } else {
-      navContainer.classList.add('active-navbar');
-      hideArrow.style.display = 'block';
-      showArrow.style.display = 'none';
-    }
-  }
+  // function hideMenu() {
+  //   const navContainer = document.querySelector('#navbar');
+  //   const showArrow = document.querySelector('#show-arrow');
+  //   const hideArrow = document.querySelector('#hide-arrow');
+  //   if (navContainer.classList.contains('active-navbar')) {
+  //     navContainer.classList.remove('active-navbar');
+  //     hideArrow.style.display = 'none';
+  //     showArrow.style.display = 'block';
+  //   } else {
+  //     navContainer.classList.add('active-navbar');
+  //     hideArrow.style.display = 'block';
+  //     showArrow.style.display = 'none';
+  //   }
+  // }
   return (
-    <div className="gen-navbar-container">
-      <div id="navbar" className="main-navbar-container">
+    <nav className="gen-navbar-container p-0">
+      <div id="navbar" className="main-navbar-container active-navbar">
         <div className="logo-container">
           <h1 className="logo-text nav-logo">Earthbnb</h1>
         </div>
         <div className="links-container">
           <ul className="nav-items">
-            <li><NavLink to="/home" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>All Properties</NavLink></li>
-            <li><NavLink to="/MakeAReservation" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Make a reservation</NavLink></li>
-            <li><NavLink to="/MyReservations" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>My reservations</NavLink></li>
-            <li><NavLink to="/AddProperty" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Add a property</NavLink></li>
-            <li><NavLink to="/DeleteProperty" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Delete a property</NavLink></li>
+            <li><NavLink to="/home" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>HOUSES</NavLink></li>
+            <li><NavLink to="/MakeAReservation" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>RESERVE</NavLink></li>
+            <li><NavLink to="/MyReservations" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>MY RESERVATIONS</NavLink></li>
+            <li><NavLink to="/AddProperty" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>ADD A HOUSE</NavLink></li>
+            <li><NavLink to="/DeleteProperty" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>DELETE A HOUSE</NavLink></li>
           </ul>
         </div>
         <div className="footer">
@@ -52,11 +52,11 @@ function Navbar() {
           </div>
         </div>
       </div>
-      <button type="button" onClick={hideMenu} className="back-btn">
+      {/* <button type="button" onClick={hideMenu} className="back-btn">
         <img id="hide-arrow" src={arrow} className="arrow-img" alt="arrow" />
         <img id="show-arrow" src={disArrow} className="arrow-img" alt="arrow" />
-      </button>
-    </div>
+      </button> */}
+    </nav>
   );
 }
 

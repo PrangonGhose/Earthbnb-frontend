@@ -1,14 +1,12 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import SplashScreen from './components/SplashScreen';
-import Register from './components/Register';
-import Login from './components/Login';
-import Mainpage from './pages/Mainpage';
 import MyReservations from './components/MyReservations';
 import MakeAReservation from './components/MakeAReservation';
 import AddProperty from './components/AddProperty';
 import DeleteProperty from './components/DeleteProperty';
-import './css/App.css';
+import Mainpage from './pages/Mainpage';
+import './App.css';
 
 function App() {
   const location = useLocation();
@@ -49,9 +47,8 @@ function App() {
   };
 
   return (
-    <div className="App container-fluid">
-      <div className="row vh-100">
-        <nav className="col-2" />
+    <div className="App container-fluid p-0">
+      <div className="d-flex p-0 vh-100">
         {location.pathname !== '/' && location.pathname !== '/Register' && location.pathname !== '/Login' && <Navbar />}
         <Routes>
           <Route exact path="/" element={<SplashScreen />} />
@@ -60,8 +57,6 @@ function App() {
           <Route exact path="/myreservations" element={<MyReservations loginStatus={ loginStatus } />} />
           <Route exact path="/addproperty" element={<AddProperty />} />
           <Route exact path="/deleteproperty" element={<DeleteProperty />} />
-          <Route exact path="/register" element={<Register loginStatus={ loginStatus } />} />
-          <Route exact path="/login" element={<Login handleLogin={ handleLogin } loginStatus={ loginStatus } />} />
         </Routes>
       </div>
     </div>

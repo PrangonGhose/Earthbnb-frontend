@@ -1,10 +1,10 @@
-.gen-navbar-container {
+/* .gen-navbar-container {
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   display: flex;
-}
+} */
 
 .arrow-img {
   width: 15px;
@@ -24,7 +24,8 @@
 
 .main-navbar-container {
   height: 100%;
-  display: none;
+
+  /* display: none; */
   flex-direction: column;
   justify-content: space-between;
   background-color: #fff;
