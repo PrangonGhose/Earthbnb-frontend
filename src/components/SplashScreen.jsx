@@ -16,7 +16,7 @@ function SplashScreen({ loginStatus }) { // eslint-disable-line
 
   const [user, setUser] = useState({
     username: '',
-    errors: '',
+    errors: [],
   });
 
   const navigate = useNavigate();
@@ -54,10 +54,17 @@ function SplashScreen({ loginStatus }) { // eslint-disable-line
 
     if (data.logged_in) {
       sessionStorage.setItem('earthbnb_user', JSON.stringify(data.user));
-      window.location.reload(false);
-      return 'success';
+      setUser({
+        ...user,
+        username: '',
+      });
+      navigate('/home');
+    } else {
+      setUser({
+        ...user,
+        errors: data.errors.username,
+      });
     }
-    return data.errors;
   };
 
   const handleRegister = async (event) => {
@@ -76,14 +83,22 @@ function SplashScreen({ loginStatus }) { // eslint-disable-line
         ...user,
         username: '',
       });
-      navigate('/');
-      return 'success';
+      window.location.reload(false);
+    } else {
+      setUser({
+        ...user,
+        errors: data.errors.username,
+      });
     }
-    return data.errors;
   };
 
   return (
     <div className="main-splash-container">
+      <div>
+        {user.errors.map((error) => (
+          <h3 key={error}>{error}</h3>
+        ))}
+      </div>
       <div className="container" id="container">
         <div className="form-container sign-up-container">
           <form className="form" action="#" onSubmit={handleRegister}>
