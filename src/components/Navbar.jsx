@@ -9,7 +9,7 @@ import vicon from '../assets/v-icon.png';
 // import arrow from '../assets/arrow.png';
 // import disArrow from '../assets/dis-arrow.png';
 
-function Navbar() {
+function Navbar({handleLogout}) {
   // function hideMenu() {
   //   const navContainer = document.querySelector('#navbar');
   //   const showArrow = document.querySelector('#show-arrow');
@@ -39,6 +39,7 @@ function Navbar() {
             <li><NavLink to="/DeleteProperty" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>DELETE A HOUSE</NavLink></li>
           </ul>
         </div>
+        <button type="button" className="btn btn-danger" onClick={handleLogout}>Logout</button>
         <div className="footer">
           <div className="social-icons-container">
             <a href="https://github.com/PrangonGhose/Earthbnb-backend"><img src={twicon} className="icon-img" alt="-icon" /></a>

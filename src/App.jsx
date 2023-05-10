@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import SplashScreen from './components/SplashScreen';
 import MyReservations from './components/MyReservations';
@@ -10,6 +10,7 @@ import './App.css';
 
 function App() {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const loginStatus = async () => {
     if (sessionStorage.getItem('earthbnb_user')) {
@@ -38,20 +39,17 @@ function App() {
     };
   };
 
-  const handleLogin = async (data) => {
-    sessionStorage.setItem('earthbnb_user', JSON.stringify(data.user));
-  };
-
   const handleLogout = () => {
     sessionStorage.removeItem('earthbnb_user');
+    navigate('/');
   };
 
   return (
     <div className="App container-fluid p-0">
       <div className="d-flex p-0 vh-100">
-        {location.pathname !== '/' && location.pathname !== '/Register' && location.pathname !== '/Login' && <Navbar />}
+        {location.pathname !== '/' && location.pathname !== '/Register' && location.pathname !== '/Login' && <Navbar handleLogout={handleLogout}/>}
         <Routes>
-          <Route exact path="/" element={<SplashScreen />} />
+          <Route exact path="/" element={<SplashScreen loginStatus={loginStatus} />} />
           <Route path="/home" element={<Mainpage />} />
           <Route exact path="/makeareservation" element={<MakeAReservation />} />
           <Route exact path="/myreservations" element={<MyReservations loginStatus={ loginStatus } />} />
