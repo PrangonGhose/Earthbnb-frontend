@@ -22,7 +22,8 @@
 }
 
 .house-img img {
-  max-width: 60rem;
+  max-width: 50rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .house-info {
@@ -73,4 +74,20 @@
   font-weight: 700;
   font-size: 0.8rem;
   margin-bottom: 2rem;
+}
+
+/* styles for screens smaller than 1500px */
+@media (max-width: 1500px) {
+  .house-img img {
+    transition: all 0.3s ease-in-out;
+    max-width: 40rem;
+  }
+}
+
+/* styles for screens smaller than 1200px */
+@media (max-width: 1200px) {
+  .house-img img {
+    transition: all 0.3s ease-in-out;
+    max-width: 17rem;
+  }
 }
