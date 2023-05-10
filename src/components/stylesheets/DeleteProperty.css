@@ -1,0 +1,39 @@
+.delete-main-container {
+  padding: 2%;
+  display: flex;
+  justify-content: center;
+}
+
+.delete-houses-container {
+  display: flex;
+  gap: 5%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.delete-house-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.delete-btn {
+  align-self: center;
+  background-color: #8db600;
+  border-radius: 20px;
+  border: 1px solid #8db600;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  margin-top: 20px;
+}
+
+.delete-btn:active {
+  transform: scale(0.95);
+}
+
+.delete-btn:focus {
+  outline: none;
+}
