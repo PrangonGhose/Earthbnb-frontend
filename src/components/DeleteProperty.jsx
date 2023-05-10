@@ -13,6 +13,7 @@ function DeleteProperty() {
   }, [dispatch]);
   return (
     <div className="delete-main-container">
+      <h1 className="delete-title">What Property Do You Wish To Delete?</h1>
       <div className="delete-houses-container">
         {houses.map((house) => (
           <div className="delete-house-container" key={house.id}>

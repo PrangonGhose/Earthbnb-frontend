@@ -1,7 +1,5 @@
 .delete-main-container {
   padding: 2%;
-  display: flex;
-  justify-content: center;
 }
 
 .delete-houses-container {
@@ -15,6 +13,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 20px;
+}
+
+.delete-title {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .delete-btn {
