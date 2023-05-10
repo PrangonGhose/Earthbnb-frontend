@@ -307,3 +307,7 @@ button.ghost {
 .splash-action-btn:focus {
   outline: none;
 }
+
+.error-notification{
+  color: red;
+}
