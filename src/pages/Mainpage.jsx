@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { getHouses } from '../redux/house/house';
 import House from '../components/House';
 import '../components/stylesheets/arrow.css';
+import './stylesheets_page/Mainpage.css';
 
 export default function Mainpage() {
   const dispatch = useDispatch();
@@ -36,7 +37,7 @@ export default function Mainpage() {
     <div className="main_page_container container-fluid p-0">
       <section className="header_main">
         <h1>Latest luxury houses</h1>
-        <p>Please select a house</p>
+        <p className="gray-text">Please select a house</p>
         <span className="circular-dots-border" />
       </section>
       <section className="houses_main d-flex align-items-center justify-content-between">
