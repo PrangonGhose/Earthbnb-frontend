@@ -45,22 +45,22 @@ const reservationsSlice = createSlice({
       ending_date:"2022-06-05"
     },
     {
-      id: 1,
+      id: 4,
       house_id: 1,
-      starting_date:"2022-05-03",
-      ending_date:"2022-06-05"
+      starting_date:"2022-09-03",
+      ending_date:"2022-09-05"
     },
     {
-      id:2,
+      id: 5,
       house_id: 2,
-      starting_date:"2022-07-03",
-      ending_date:"2022-08-05"
+      starting_date:"2022-09-03",
+      ending_date:"2022-09-05"
     },
     {
-      id:3,
+      id: 6,
       house_id: 3,
-      starting_date:"2022-05-03",
-      ending_date:"2022-06-05"
+      starting_date:"2022-09-03",
+      ending_date:"2022-09-05"
     }
   ],
   reducers: {},
