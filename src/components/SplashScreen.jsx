@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
 import pic from '../assets/username.png';
 import './stylesheets/SplashScreen.css';
-import { useNavigate } from 'react-router';
 
-function SplashScreen({loginStatus}) {
+function SplashScreen({ loginStatus }) { // eslint-disable-line
   function addClass() {
     const container = document.getElementById('container');
     container.classList.add('right-panel-active');
@@ -24,64 +24,62 @@ function SplashScreen({loginStatus}) {
 
   useEffect(() => {
     (async () => {
-      const {isLoggedIn, user} = await loginStatus();
+      const { isLoggedIn, user } = await loginStatus();
       if (isLoggedIn) {
         setUser(user);
-        navigate('/home')
+        navigate('/home');
       }
-    })()
-  }, [])
+    })();
+  }, []);
 
   const handleChange = (e) => {
-    const {name, value} = e.target;
+    const { name, value } = e.target;
     setUser({
       ...user,
       [name]: value,
     });
-  }
+  };
 
   const handleLogin = async (event) => {
     event.preventDefault();
     const response = await fetch('http://localhost:3000/login/', {
       method: 'POST',
       headers: {
-        "Content-Type": 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify({user: user})
+      body: JSON.stringify({ user }),
     });
-  
+
     const data = await response.json();
 
     if (data.logged_in) {
       sessionStorage.setItem('earthbnb_user', JSON.stringify(data.user));
       window.location.reload(false);
       return 'success';
-    } else {
-      return data.errors
     }
+    return data.errors;
   };
-  
+
   const handleRegister = async (event) => {
     event.preventDefault();
     const response = await fetch('http://localhost:3000/users/', {
       method: 'POST',
       headers: {
-        "Content-Type": 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify({username: username})
+      body: JSON.stringify({ username }),
     });
-    
+
     const data = await response.json();
     if (data.status === 'created') {
       setUser({
         ...user,
-        username: ''
-      })
+        username: '',
+      });
       navigate('/');
       return 'success';
-    } else {
-      return data.errors;
     }
+    return data.errors;
   };
 
   return (

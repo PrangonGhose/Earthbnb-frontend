@@ -1,22 +1,23 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function MyReservations({loginStatus}) {
+function MyReservations({ loginStatus }) { // eslint-disable-line
   const [reservations, setReservations] = useState([]);
   const navigate = useNavigate();
-  let isLoggedIn, user;
+  let isLoggedIn; let
+    user;
 
   useEffect(() => {
     (async () => {
-      ({isLoggedIn, user} = await loginStatus());
+      ({ isLoggedIn, user } = await loginStatus());
       if (isLoggedIn) {
-        const response = await fetch(`http://localhost:3000/reservations/${user.username}`)
+        const response = await fetch(`http://localhost:3000/reservations/${user.username}`);
         const data = await response.json();
         setReservations(data);
       } else {
-        navigate('/')
+        navigate('/');
       }
-    })()
+    })();
   }, []);
 
   return (

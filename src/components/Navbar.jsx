@@ -9,7 +9,7 @@ import vicon from '../assets/v-icon.png';
 // import arrow from '../assets/arrow.png';
 // import disArrow from '../assets/dis-arrow.png';
 
-function Navbar({handleLogout}) {
+function Navbar({ handleLogout }) { // eslint-disable-line
   // function hideMenu() {
   //   const navContainer = document.querySelector('#navbar');
   //   const showArrow = document.querySelector('#show-arrow');
