@@ -1,34 +1,121 @@
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
 import pic from '../assets/username.png';
 import './stylesheets/SplashScreen.css';
 
-function SplashScreen() {
+function SplashScreen({ loginStatus }) { // eslint-disable-line
   function addClass() {
     const container = document.getElementById('container');
     container.classList.add('right-panel-active');
   }
+
   function removeClass() {
     const container = document.getElementById('container');
     container.classList.remove('right-panel-active');
   }
+
+  const [user, setUser] = useState({
+    username: '',
+    errors: [],
+  });
+
+  const navigate = useNavigate();
+  const { username } = user;
+
+  useEffect(() => {
+    (async () => {
+      const { isLoggedIn, user } = await loginStatus();
+      if (isLoggedIn) {
+        setUser(user);
+        navigate('/home');
+      }
+    })();
+  }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser({
+      ...user,
+      [name]: value,
+    });
+  };
+
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    const response = await fetch('http://localhost:3000/login/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ user }),
+    });
+
+    const data = await response.json();
+
+    if (data.logged_in) {
+      sessionStorage.setItem('earthbnb_user', JSON.stringify(data.user));
+      setUser({
+        ...user,
+        username: '',
+      });
+      navigate('/home');
+    } else {
+      setUser({
+        ...user,
+        errors: data.errors.username,
+      });
+    }
+  };
+
+  const handleRegister = async (event) => {
+    event.preventDefault();
+    const response = await fetch('http://localhost:3000/users/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username }),
+    });
+
+    const data = await response.json();
+    if (data.status === 'created') {
+      setUser({
+        ...user,
+        username: '',
+      });
+      window.location.reload(false);
+    } else {
+      setUser({
+        ...user,
+        errors: data.errors.username,
+      });
+    }
+  };
+
   return (
     <div className="main-splash-container">
+      <div>
+        {user.errors.map((error) => (
+          <h3 key={error}>{error}</h3>
+        ))}
+      </div>
       <div className="container" id="container">
         <div className="form-container sign-up-container">
-          <form className="form" action="#">
+          <form className="form" action="#" onSubmit={handleRegister}>
             <h1 className="form-title">Create Account</h1>
             <div className="username-input-container">
               <img src={pic} className="username-img" alt="username-icon" />
-              <input className="username-input" type="name" placeholder="Username" />
+              <input className="username-input" type="name" placeholder="Username" name="username" value={username} onChange={handleChange} />
             </div>
             <button type="submit" className="splash-action-btn marg-btn">Sign Up</button>
           </form>
         </div>
         <div className="form-container sign-in-container">
-          <form className="form" action="#">
+          <form className="form" action="#" onSubmit={handleLogin}>
             <h1 className="form-title">Sign in</h1>
             <div className="username-input-container">
               <img src={pic} className="username-img" alt="username-icon" />
-              <input className="username-input" type="name" placeholder="Username" />
+              <input className="username-input" type="name" placeholder="Username" name="username" value={username} onChange={handleChange} />
             </div>
             <button type="submit" className="splash-action-btn">Sign In</button>
           </form>
