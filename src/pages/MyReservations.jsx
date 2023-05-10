@@ -34,8 +34,8 @@ export default function MyReservations() {
                   key={uuidv4()}
                   id={reservation.id}
                   name={house.name}
-                  starting_date={reservation.starting_date}
-                  ending_date={reservation.ending_date}
+                  startingDate={reservation.starting_date}
+                  endingDate={reservation.ending_date}
                 />
               );
             })}

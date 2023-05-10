@@ -7,19 +7,16 @@ export const getReservations = createAsyncThunk(
     let user = { id: '12345' };
     sessionStorage.setItem('user', user);
     user = sessionStorage.getItem('user');
-    try {
-      const response = await axios({
-        method: 'get',
-        url: 'http://localhost:3000/reservations',
-        data: {
-          user_id: user.id,
-        },
-      });
 
-      return response.data;
-    } catch (error) {
-      return error;
-    }
+    const response = await axios({
+      method: 'get',
+      url: 'http://localhost:3000/reservations',
+      data: {
+        user_id: user.id,
+      },
+    });
+
+    return response.data;
   },
 );
 

@@ -29,7 +29,10 @@
   grid-template-rows: 20% 20% 20% 20% 20%;
 }
 
-.main_page_container h1, h2, h4, h5 {
-  font-weight: 800!important;
+.main_page_container h1,
+h2,
+h4,
+h5 {
+  font-weight: 800 !important;
   color: black;
 }
