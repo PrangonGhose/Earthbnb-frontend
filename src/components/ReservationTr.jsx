@@ -1,13 +1,19 @@
-import React from 'react'
+import React from 'react';
+import { string } from 'prop-types';
 
 export default function ReservationTr(props) {
-  const { name, starting_date, ending_date } = props
+  const { name, startingDate, endingDate } = props;
   return (
-    <li class="table-row">
-      <div class="col" data-label="House">{name}</div>
-      <div class="col" data-label="Starting date">{starting_date}</div>
-      <div class="col" data-label="Ending date">{ending_date}</div>
+    <li className="table-row">
+      <div className="col" data-label="House">{name}</div>
+      <div className="col" data-label="Starting date">{startingDate}</div>
+      <div className="col" data-label="Ending date">{endingDate}</div>
     </li>
-  )
+  );
 }
 
+ReservationTr.propTypes = {
+  name: string.isRequired,
+  startingDate: string.isRequired,
+  endingDate: string.isRequired,
+};
