@@ -105,7 +105,7 @@ function SplashScreen({ loginStatus }) { // eslint-disable-line
             <h1 className="form-title">Create Account</h1>
             <div className="username-input-container">
               <img src={pic} className="username-img" alt="username-icon" />
-              <input className="username-input" type="name" placeholder="Username" name="username" value={username} onChange={handleChange} />
+              <input className="username-input" required type="name" placeholder="Username" name="username" value={username} onChange={handleChange} />
             </div>
             <button type="submit" className="splash-action-btn marg-btn">Sign Up</button>
           </form>
@@ -120,7 +120,7 @@ function SplashScreen({ loginStatus }) { // eslint-disable-line
             <h1 className="form-title">Sign in</h1>
             <div className="username-input-container">
               <img src={pic} className="username-img" alt="username-icon" />
-              <input className="username-input" type="name" placeholder="Username" name="username" value={username} onChange={handleChange} />
+              <input className="username-input" required type="name" placeholder="Username" name="username" value={username} onChange={handleChange} />
             </div>
             <button type="submit" className="splash-action-btn">Sign In</button>
           </form>

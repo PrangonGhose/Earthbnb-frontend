@@ -10,49 +10,49 @@ function AddProperty() {
             <label htmlFor="nameInput" className="add-label">
               Name
               <br />
-              <input id="nameInput" className="add-input" type="name" />
+              <input id="nameInput" className="add-input"required type="name" />
             </label>
           </div>
           <div className="add-input-container">
             <label htmlFor="addressInput" className="add-label">
               Address
               <br />
-              <input id="addressInput" className="add-input" type="text" />
+              <input id="addressInput" className="add-input" required type="text" />
             </label>
           </div>
           <div className="add-input-container">
             <label htmlFor="roomsInput" className="add-label">
               Rooms
               <br />
-              <input id="roomsInput" className="add-input" type="number" />
+              <input id="roomsInput" className="add-input" required type="number" />
             </label>
           </div>
           <div className="add-input-container">
             <label htmlFor="bedsInput" className="add-label">
               Beds
               <br />
-              <input id="bedsInput" className="add-input" type="number" />
+              <input id="bedsInput" className="add-input" required type="number" />
             </label>
           </div>
           <div className="add-input-container">
             <label htmlFor="picturesInput" className="add-label">
               Picture
               <br />
-              <input id="picturesInput" className="add-input" type="text" />
+              <input id="picturesInput" className="add-input" required type="text" />
             </label>
           </div>
           <div className="add-input-container">
             <label htmlFor="priceInput" className="add-label">
               Price by night
               <br />
-              <input id="priceInput" className="add-input" type="number" />
+              <input id="priceInput" className="add-input" required type="number" />
             </label>
           </div>
           <div className="add-input-container">
             <label htmlFor="descriptionInput" className="add-label">
               Description
               <br />
-              <input id="descriptionInput" className="add-input" type="text" />
+              <input id="descriptionInput" className="add-input" required type="text" />
             </label>
           </div>
           <button type="submit" className="add-submit-btn">Add House</button>
