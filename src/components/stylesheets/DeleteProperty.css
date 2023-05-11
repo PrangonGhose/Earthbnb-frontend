@@ -25,9 +25,9 @@
 
 .delete-btn {
   align-self: center;
-  background-color: #8db600;
+  background-color: rgba(255, 127, 0, 0.9);
   border-radius: 20px;
-  border: 1px solid #8db600;
+  border: 1px solid rgba(255, 127, 0, 0.9);
   color: #fff;
   font-size: 15px;
   font-weight: bold;
