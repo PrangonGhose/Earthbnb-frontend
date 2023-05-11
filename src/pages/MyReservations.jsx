@@ -27,18 +27,26 @@ export default function MyReservations() {
               <div className="col">Starting date</div>
               <div className="col">Ending date</div>
             </li>
-            {reservations.map((reservation) => {
-              const house = houses.find((item) => item.id === parseInt(reservation.house_id, 10));
-              return (
-                <ReservationTr
-                  key={uuidv4()}
-                  id={reservation.id}
-                  name={house.name}
-                  startingDate={reservation.starting_date}
-                  endingDate={reservation.ending_date}
-                />
-              );
-            })}
+            {
+              reservations.length > 0 ? (
+                reservations.map((reservation) => {
+                  const house = houses.find((item) => item.id === parseInt(reservation.house_id, 10));
+                  return (
+                    <ReservationTr
+                      key={uuidv4()}
+                      id={reservation.id}
+                      name={house.name}
+                      startingDate={reservation.starting_date}
+                      endingDate={reservation.ending_date}
+                    />
+                  );
+                })
+              ) : (
+                <li className="table-row">
+                  <div className="col" data-label="House">No Reservations</div>
+                </li>
+              )
+            }
           </ul>
         </div>
       </div>
