@@ -30,7 +30,7 @@ function SplashScreen({ loginStatus }) { // eslint-disable-line
         navigate('/home');
       }
     })();
-  }, []);
+  }, [loginStatus, navigate]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

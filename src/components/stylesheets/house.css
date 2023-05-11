@@ -8,10 +8,14 @@
 }
 
 .house_pic {
-  height: 16rem;
+  height: 12rem !important;
   width: 18rem;
 }
 
 .house-detail-link {
   text-decoration: none;
+}
+
+.name_house_container {
+  height: 2.5rem;
 }
