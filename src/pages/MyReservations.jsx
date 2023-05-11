@@ -28,7 +28,7 @@ export default function MyReservations() {
               <div className="col">Ending date</div>
             </li>
             {
-              reservations.length > 0 ? (
+              reservations.length > 0 && houses.length > 0 ? (
                 reservations.map((reservation) => {
                   const house = houses.find((item) => item.id === parseInt(reservation.house_id, 10));
                   return (

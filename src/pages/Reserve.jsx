@@ -24,12 +24,18 @@ export default function Reserve() {
           </p>
           <div className="form_container">
             <select name="houses" className="select_house">
-              {houses.map((house) => (
-                <Option
-                  key={uuidv4()}
-                  name={house.name}
-                />
-              ))}
+              {
+                houses.length > 0 ? (
+                  houses.map((house) => (
+                    <Option
+                      key={uuidv4()}
+                      name={house.name}
+                    />
+                  ))
+                ) : (
+                  <option value='no house'>No houses avaliable</option>
+                )
+              }
             </select>
             <div className="date-inputs">
               <label htmlFor="start-date" className="text-white">

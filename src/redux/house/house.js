@@ -14,7 +14,7 @@ const housesSlice = createSlice({
   initialState: [
     {
       id: 1,
-      name: 'House num 1',
+      name: '34 char max house name 34 char max',
       address: 'address1',
       rooms: 30,
       beds: 4,

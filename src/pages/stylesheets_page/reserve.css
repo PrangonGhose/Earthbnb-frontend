@@ -23,6 +23,8 @@
   height: 100vh;
   align-items: center;
   justify-content: center;
+  padding: 0 1rem;
+  overflow: auto;
 }
 
 .reserve_container_in h3 {
@@ -43,6 +45,7 @@
 .form_container {
   display: flex;
   gap: 2rem;
+  height: 3rem;
 }
 
 .date-inputs {
@@ -71,6 +74,8 @@
   border-color: white;
   border-width: 2px;
   text-align: center;
+  width: 15rem;
+  height: 3rem;
 }
 
 .form_container button {
@@ -82,16 +87,28 @@
   text-align: center;
   font-weight: 700;
   padding: 0.5rem 1rem;
+  width: 10rem;
+  height: 3rem;
 }
 
 @media all and (max-width: 767px) {
   .form_container {
     flex-direction: column;
   }
+
+  .reserve_container_in {
+    padding: 0;
+    justify-content: start;
+    margin-top: 5rem;
+  }
 }
 
-@media all and (max-width: 1060px) {
+@media all and (max-width: 1159px) {
   .form_container {
     flex-direction: column;
+  }
+
+  .form_container button {
+    align-self: center;
   }
 }
