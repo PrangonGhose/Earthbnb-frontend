@@ -40,7 +40,9 @@ function AddProperty() {
     <div className="main-add-container">
       <div className="add-form-container">
         <h1 className="add-form-title">Add A New House</h1>
-        {successMessage && <p>{successMessage}</p>} {/* Display success message */}
+        {successMessage && <p>{successMessage}</p>}
+        {' '}
+        {/* Display success message */}
         <form className="inputs-container" onSubmit={handleSubmit}>
           <div className="add-input-container">
             <label htmlFor="nameInput" className="add-label">
@@ -73,80 +75,80 @@ function AddProperty() {
             </label>
           </div>
           <div className="add-input-container">
-  <label htmlFor="roomsInput" className="add-label">
-    Rooms
-    <br />
-    <input
-      id="roomsInput"
-      className="add-input"
-      required
-      type="number"
-      name="rooms"
-      value={formData.rooms}
-      onChange={handleChange}
-    />
-  </label>
-</div>
-<div className="add-input-container">
-  <label htmlFor="bedsInput" className="add-label">
-    Beds
-    <br />
-    <input
-      id="bedsInput"
-      className="add-input"
-      required
-      type="number"
-      name="beds"
-      value={formData.beds}
-      onChange={handleChange}
-    />
-  </label>
-</div>
-<div className="add-input-container">
-  <label htmlFor="picturesInput" className="add-label">
-    Picture
-    <br />
-    <input
-      id="picturesInput"
-      className="add-input"
-      required
-      type="text"
-      name="picture"
-      value={formData.picture}
-      onChange={handleChange}
-    />
-  </label>
-</div>
-<div className="add-input-container">
-  <label htmlFor="priceInput" className="add-label">
-    Price by night
-    <br />
-    <input
-      id="priceInput"
-      className="add-input"
-      required
-      type="number"
-      name="price_by_night"
-      value={formData.price_by_night}
-      onChange={handleChange}
-    />
-  </label>
-</div>
-<div className="add-input-container">
-  <label htmlFor="descriptionInput" className="add-label">
-    Description
-    <br />
-    <input
-      id="descriptionInput"
-      className="add-input"
-      required
-      type="text"
-      name="description"
-      value={formData.description}
-      onChange={handleChange}
-    />
-  </label>
-</div>
+            <label htmlFor="roomsInput" className="add-label">
+              Rooms
+              <br />
+              <input
+                id="roomsInput"
+                className="add-input"
+                required
+                type="number"
+                name="rooms"
+                value={formData.rooms}
+                onChange={handleChange}
+              />
+            </label>
+          </div>
+          <div className="add-input-container">
+            <label htmlFor="bedsInput" className="add-label">
+              Beds
+              <br />
+              <input
+                id="bedsInput"
+                className="add-input"
+                required
+                type="number"
+                name="beds"
+                value={formData.beds}
+                onChange={handleChange}
+              />
+            </label>
+          </div>
+          <div className="add-input-container">
+            <label htmlFor="picturesInput" className="add-label">
+              Picture
+              <br />
+              <input
+                id="picturesInput"
+                className="add-input"
+                required
+                type="text"
+                name="picture"
+                value={formData.picture}
+                onChange={handleChange}
+              />
+            </label>
+          </div>
+          <div className="add-input-container">
+            <label htmlFor="priceInput" className="add-label">
+              Price by night
+              <br />
+              <input
+                id="priceInput"
+                className="add-input"
+                required
+                type="number"
+                name="price_by_night"
+                value={formData.price_by_night}
+                onChange={handleChange}
+              />
+            </label>
+          </div>
+          <div className="add-input-container">
+            <label htmlFor="descriptionInput" className="add-label">
+              Description
+              <br />
+              <input
+                id="descriptionInput"
+                className="add-input"
+                required
+                type="text"
+                name="description"
+                value={formData.description}
+                onChange={handleChange}
+              />
+            </label>
+          </div>
           <button type="submit" className="add-submit-btn">Add House</button>
         </form>
       </div>

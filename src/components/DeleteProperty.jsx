@@ -14,10 +14,10 @@ function DeleteProperty() {
 
   const handleDelete = (houseId) => {
     dispatch(deleteHouse(houseId))
-    .then(() => {
+      .then(() => {
       // House deleted successfully
-      window.location.reload();
-    })
+        window.location.reload();
+      });
   };
 
   return (

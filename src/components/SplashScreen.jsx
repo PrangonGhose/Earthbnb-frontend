@@ -97,11 +97,11 @@ function SplashScreen({ loginStatus }) { // eslint-disable-line
       <div className="container" id="container">
         <div className="form-container sign-up-container">
           <form className="form" action="#" onSubmit={handleRegister}>
-          <div>
-        {user.errors.map((error) => (
-          <h3 className='error-notification' key={error}>{error}</h3>
-        ))}
-      </div>
+            <div>
+              {user.errors.map((error) => (
+                <h3 className="error-notification" key={error}>{error}</h3>
+              ))}
+            </div>
             <h1 className="form-title">Create Account</h1>
             <div className="username-input-container">
               <img src={pic} className="username-img" alt="username-icon" />
@@ -112,11 +112,11 @@ function SplashScreen({ loginStatus }) { // eslint-disable-line
         </div>
         <div className="form-container sign-in-container">
           <form className="form" action="#" onSubmit={handleLogin}>
-          <div>
-        {user.errors.map((error) => (
-          <h3 key={error}>{error}</h3>
-        ))}
-      </div>
+            <div>
+              {user.errors.map((error) => (
+                <h3 key={error}>{error}</h3>
+              ))}
+            </div>
             <h1 className="form-title">Sign in</h1>
             <div className="username-input-container">
               <img src={pic} className="username-img" alt="username-icon" />

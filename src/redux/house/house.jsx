@@ -31,7 +31,7 @@ export const createHouse = createAsyncThunk(
     } catch (error) {
       throw new Error('Failed to create house');
     }
-  }
+  },
 );
 
 export const deleteHouse = createAsyncThunk(
@@ -52,7 +52,7 @@ export const deleteHouse = createAsyncThunk(
     } catch (error) {
       throw new Error('Failed to delete house');
     }
-  }
+  },
 );
 
 const housesSlice = createSlice({
@@ -103,7 +103,7 @@ const housesSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getHouses.fulfilled, (state, action) => (action.payload))
-      .addCase(deleteHouse.fulfilled, (state, action) => null)
+      .addCase(deleteHouse.fulfilled, () => null);
   },
 });
 
