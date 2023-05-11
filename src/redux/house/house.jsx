@@ -9,6 +9,31 @@ export const getHouses = createAsyncThunk(
   },
 );
 
+export const createHouse = createAsyncThunk(
+  'houses/create',
+  async (houseData, thunkAPI) => {
+    try {
+      const response = await fetch('http://127.0.0.1:3000/houses', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(houseData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to create house');
+      }
+
+      const createdHouse = await response.json();
+
+      return createdHouse;
+    } catch (error) {
+      throw new Error('Failed to create house');
+    }
+  }
+);
+
 const housesSlice = createSlice({
   name: 'houses',
   initialState: [
