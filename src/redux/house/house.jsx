@@ -11,7 +11,7 @@ export const getHouses = createAsyncThunk(
 
 export const createHouse = createAsyncThunk(
   'houses/create',
-  async (houseData, thunkAPI) => {
+  async (houseData) => {
     try {
       const response = await fetch('http://127.0.0.1:3000/houses', {
         method: 'POST',
@@ -30,6 +30,27 @@ export const createHouse = createAsyncThunk(
       return createdHouse;
     } catch (error) {
       throw new Error('Failed to create house');
+    }
+  }
+);
+
+export const deleteHouse = createAsyncThunk(
+  'houses/delete',
+  async (houseId) => {
+    try {
+      const response = await fetch(`http://127.0.0.1:3000/houses/${houseId}`, {
+        method: 'DELETE',
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to delete house');
+      }
+
+      const deletedData = await response.json();
+
+      return deletedData;
+    } catch (error) {
+      throw new Error('Failed to delete house');
     }
   }
 );
@@ -81,7 +102,8 @@ const housesSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getHouses.fulfilled, (state, action) => (action.payload));
+      .addCase(getHouses.fulfilled, (state, action) => (action.payload))
+      .addCase(deleteHouse.fulfilled, (state, action) => null)
   },
 });
 

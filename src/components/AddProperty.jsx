@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createHouse } from '../redux/house/house';
-
 import './stylesheets/AddProperty.css';
 
 function AddProperty() {
   const dispatch = useDispatch();
 
-  const [formData, setFormData] = useState({
+  const initialFormData = {
     house_name: '',
     address: '',
     rooms: '',
@@ -15,7 +14,10 @@ function AddProperty() {
     picture: '',
     price_by_night: '',
     description: '',
-  });
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,12 +31,16 @@ function AddProperty() {
     e.preventDefault();
 
     dispatch(createHouse(formData));
+
+    setFormData(initialFormData); // Reset the form data after successful submission
+    setSuccessMessage('House created successfully'); // Display success message
   };
 
   return (
     <div className="main-add-container">
       <div className="add-form-container">
         <h1 className="add-form-title">Add A New House</h1>
+        {successMessage && <p>{successMessage}</p>} {/* Display success message */}
         <form className="inputs-container" onSubmit={handleSubmit}>
           <div className="add-input-container">
             <label htmlFor="nameInput" className="add-label">

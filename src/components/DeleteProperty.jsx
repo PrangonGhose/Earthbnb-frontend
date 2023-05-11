@@ -1,6 +1,6 @@
-import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
-import { getHouses } from '../redux/house/house';
+import { useDispatch, useSelector } from 'react-redux';
+import { getHouses, deleteHouse } from '../redux/house/house';
 import House from './House';
 import './stylesheets/DeleteProperty.css';
 
@@ -11,6 +11,15 @@ function DeleteProperty() {
   useEffect(() => {
     dispatch(getHouses());
   }, [dispatch]);
+
+  const handleDelete = (houseId) => {
+    dispatch(deleteHouse(houseId))
+    .then(() => {
+      // House deleted successfully
+      window.location.reload();
+    })
+  };
+
   return (
     <div className="delete-main-container">
       <h1 className="delete-title">What Property Do You Wish To Delete?</h1>
@@ -19,11 +28,17 @@ function DeleteProperty() {
           <div className="delete-house-container" key={house.id}>
             <House
               id={house.id}
-              name={house.name}
-              pictures={house.pictures}
+              name={house.house_name}
+              pictures={house.picture}
               description={house.description}
             />
-            <button type="button" className="delete-btn">Delete</button>
+            <button
+              type="button"
+              className="delete-btn"
+              onClick={() => handleDelete(house.id)}
+            >
+              Delete
+            </button>
           </div>
         ))}
       </div>
