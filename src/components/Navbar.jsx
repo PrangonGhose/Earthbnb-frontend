@@ -7,7 +7,7 @@ import gicon from '../assets/g-icon.png';
 import picon from '../assets/p-icon.png';
 import vicon from '../assets/v-icon.png';
 
-function Navbar() {
+function Navbar({ handleLogout }) { // eslint-disable-line
   return (
     <nav className="gen-navbar-container p-0">
       <div id="navbar" className="main-navbar-container active-navbar">
@@ -23,6 +23,7 @@ function Navbar() {
             <li><NavLink to="/DeleteProperty" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>DELETE A HOUSE</NavLink></li>
           </ul>
         </div>
+        <button type="button" className="btn btn-danger" onClick={handleLogout}>Logout</button>
         <div className="footer">
           <div className="social-icons-container">
             <a href="https://github.com/PrangonGhose/Earthbnb-backend"><img src={twicon} className="icon-img" alt="-icon" /></a>

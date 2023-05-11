@@ -4,7 +4,7 @@ import axios from 'axios';
 export const getHouses = createAsyncThunk(
   'houses/getHouses',
   async () => {
-    const respond = await axios.get('http://localhost:3000/api/greeting');
+    const respond = await axios.get('http://localhost:3000/houses/');
     return respond.data;
   },
 );
