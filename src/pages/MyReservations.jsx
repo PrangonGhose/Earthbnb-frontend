@@ -30,7 +30,9 @@ export default function MyReservations() {
             {
               reservations.length > 0 && houses.length > 0 ? (
                 reservations.map((reservation) => {
-                  const house = houses.find((item) => item.id === parseInt(reservation.house_id, 10));
+                  const house = houses.find(
+                    (item) => item.id === parseInt(reservation.house_id, 10),
+                  );
                   return (
                     <ReservationTr
                       key={uuidv4()}

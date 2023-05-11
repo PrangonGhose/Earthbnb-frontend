@@ -33,7 +33,7 @@ export default function Reserve() {
                     />
                   ))
                 ) : (
-                  <option value='no house'>No houses avaliable</option>
+                  <option value="no house">No houses avaliable</option>
                 )
               }
             </select>
