@@ -23,7 +23,7 @@ function Navbar({ handleLogout }) { // eslint-disable-line
             <li><NavLink to="/DeleteProperty" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>DELETE A HOUSE</NavLink></li>
           </ul>
         </div>
-        <button type="button" className="btn btn-danger" onClick={handleLogout}>Logout</button>
+        <button type="button" className="logout-btn" onClick={handleLogout}>Logout</button>
         <div className="footer">
           <div className="social-icons-container">
             <a href="https://github.com/PrangonGhose/Earthbnb-backend"><img src={twicon} className="icon-img" alt="-icon" /></a>
