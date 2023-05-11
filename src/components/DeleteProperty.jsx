@@ -10,14 +10,10 @@ function DeleteProperty() {
 
   useEffect(() => {
     dispatch(getHouses());
-  }, [dispatch]);
+  }, [dispatch, houses]);
 
   const handleDelete = (houseId) => {
-    dispatch(deleteHouse(houseId))
-      .then(() => {
-      // House deleted successfully
-        window.location.reload();
-      });
+    dispatch(deleteHouse(houseId));
   };
 
   return (
