@@ -8,20 +8,6 @@ import picon from '../assets/p-icon.png';
 import vicon from '../assets/v-icon.png';
 
 function Navbar({ handleLogout }) { // eslint-disable-line
-  // function hideMenu() {
-  //   const navContainer = document.querySelector('#navbar');
-  //   const showArrow = document.querySelector('#show-arrow');
-  //   const hideArrow = document.querySelector('#hide-arrow');
-  //   if (navContainer.classList.contains('active-navbar')) {
-  //     navContainer.classList.remove('active-navbar');
-  //     hideArrow.style.display = 'none';
-  //     showArrow.style.display = 'block';
-  //   } else {
-  //     navContainer.classList.add('active-navbar');
-  //     hideArrow.style.display = 'block';
-  //     showArrow.style.display = 'none';
-  //   }
-  // }
   return (
     <nav className="gen-navbar-container p-0">
       <div id="navbar" className="main-navbar-container active-navbar">
@@ -31,7 +17,7 @@ function Navbar({ handleLogout }) { // eslint-disable-line
         <div className="links-container">
           <ul className="nav-items">
             <li><NavLink to="/home" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>HOUSES</NavLink></li>
-            <li><NavLink to="/MakeAReservation" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>RESERVE</NavLink></li>
+            <li><NavLink to="/reserve" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>RESERVE</NavLink></li>
             <li><NavLink to="/MyReservations" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>MY RESERVATIONS</NavLink></li>
             <li><NavLink to="/AddProperty" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>ADD A HOUSE</NavLink></li>
             <li><NavLink to="/DeleteProperty" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>DELETE A HOUSE</NavLink></li>
