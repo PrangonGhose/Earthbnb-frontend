@@ -297,7 +297,7 @@ button.ghost {
   color: red;
 }
 
-@media (max-width: 575px) {
+@media (max-width: 767px) {
   .main-splash-container {
     padding-left: 15px;
     padding-right: 15px;
