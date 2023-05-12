@@ -4,6 +4,12 @@
   padding: 3%;
 }
 
+@media (max-width: 767px) {
+  .main-add-container {
+    padding-top: 65px;
+  }
+}
+
 .add-form-container {
   background-color: #ffffff50;
   height: 100%;
