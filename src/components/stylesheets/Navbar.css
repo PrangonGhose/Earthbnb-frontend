@@ -116,26 +116,6 @@ ul {
   font-size: 0.1px;
 }
 
-.logout-btn {
-  align-self: center;
-  background-color: rgba(255, 127, 0, 0.9);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 127, 0, 0.9);
-  color: #fff;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 12px 45px;
-  letter-spacing: 1px;
-}
-
-.logout-btn:active {
-  transform: scale(0.95);
-}
-
-.logout-btn:focus {
-  outline: none;
-}
-
 .display-none {
   transform: translateX(0);
   transition: 0.4s;
