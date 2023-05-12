@@ -18,12 +18,21 @@ function Navbar({ handleLogout }) { // eslint-disable-line
     const Footer = document.querySelector('.footer');
     const showArrow = document.querySelector('#show-arrow');
     const hideArrow = document.querySelector('#hide-arrow');
+    const paginationLeftArrow = document.querySelector('.arrow.left');
     if (!NavContainer.classList.contains('active-navbar')) {
       NavContainer.classList.add('active-navbar');
       NavContainer.style.display = 'flex';
       hideArrow.style.display = 'none';
       showArrow.style.display = 'block';
     }
+
+    paginationLeftArrow.style.zIndex = '0';
+    if (MenuIcon.classList.contains('show-tb-menu')) {
+      setTimeout(() => {
+        paginationLeftArrow.style.zIndex = '100';
+      }, 400);
+    }
+
     NavContainer.classList.toggle('hide-in-mobile');
     MenuIcon.classList.toggle('show-tb-menu');
     LinksContainer.classList.toggle('display-none');
