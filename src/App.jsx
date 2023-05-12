@@ -11,6 +11,7 @@ import HouseDetail from './pages/HouseDetail';
 import Mainpage from './pages/Mainpage';
 import './App.css';
 import HideShowMenu from './components/HideShowMenu';
+import './components/stylesheets/hideShowMenu.css';
 
 function App() {
   const location = useLocation();

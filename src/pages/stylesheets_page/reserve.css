@@ -91,7 +91,7 @@
   height: 3rem;
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: 786px) {
   .form_container {
     flex-direction: column;
   }
