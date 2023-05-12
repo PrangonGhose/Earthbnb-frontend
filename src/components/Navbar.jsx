@@ -26,11 +26,13 @@ function Navbar({ handleLogout }) { // eslint-disable-line
       showArrow.style.display = 'block';
     }
 
-    paginationLeftArrow.style.zIndex = '0';
-    if (MenuIcon.classList.contains('show-tb-menu')) {
-      setTimeout(() => {
-        paginationLeftArrow.style.zIndex = '100';
-      }, 400);
+    if (paginationLeftArrow) {
+      paginationLeftArrow.style.zIndex = '0';
+      if (MenuIcon.classList.contains('show-tb-menu')) {
+        setTimeout(() => {
+          paginationLeftArrow.style.zIndex = '100';
+        }, 400);
+      }
     }
 
     NavContainer.classList.toggle('hide-in-mobile');
