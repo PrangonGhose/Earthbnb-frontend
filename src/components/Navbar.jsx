@@ -10,7 +10,6 @@ import gicon from '../assets/g-icon.png';
 import picon from '../assets/p-icon.png';
 import vicon from '../assets/v-icon.png';
 
-
 export default function Navbar({ handleLogout }) {
   const [menuIsShowing, setMenuIsShowing] = useState(false);
 
@@ -45,7 +44,7 @@ export default function Navbar({ handleLogout }) {
     Logout.classList.toggle('display-none');
     Footer.classList.toggle('display-none');
   };
-  
+
   return (
     <nav className="gen-navbar-container p-0">
       <div className="tb-menu">
