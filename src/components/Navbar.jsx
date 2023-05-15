@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import './stylesheets/Navbar.css';
 import { TbMenu } from 'react-icons/tb';
@@ -12,6 +12,7 @@ import vicon from '../assets/v-icon.png';
 
 export default function Navbar({ handleLogout }) {
   const [menuIsShowing, setMenuIsShowing] = useState(false);
+  const navRef = useRef();
 
   const handleMenuClick = () => {
     const NavContainer = document.querySelector('#navbar');
@@ -45,8 +46,20 @@ export default function Navbar({ handleLogout }) {
     Footer.classList.toggle('display-none');
   };
 
+  useEffect(() => {
+    const handler = (e) => {
+      if (!navRef.current.contains(e.target) && menuIsShowing) {
+        handleMenuClick();
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => {
+      document.removeEventListener('mousedown', handler);
+    };
+  });
+
   return (
-    <nav className="gen-navbar-container p-0">
+    <nav className="gen-navbar-container p-0" ref={navRef}>
       <div className="tb-menu">
         { menuIsShowing
           ? <GrFormClose onClick={handleMenuClick} />
