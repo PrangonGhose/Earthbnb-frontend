@@ -131,7 +131,7 @@ ul {
 }
 
 /* styles for screens smaller than 1500px */
-@media (max-width: 786px) {
+@media (max-width: 767px) {
   .tb-menu {
     display: block;
     position: fixed;
