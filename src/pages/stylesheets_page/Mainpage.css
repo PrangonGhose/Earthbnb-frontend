@@ -36,3 +36,22 @@ h5 {
   font-weight: 800 !important;
   color: black;
 }
+
+@media screen and (max-width: 767px) {
+  .main_page_container {
+    margin-top: 3rem;
+    grid-template-rows: auto;
+  }
+
+  .arrow {
+    width: 2.5rem;
+  }
+
+  .arrow img {
+    width: 1.2rem;
+  }
+
+  .left {
+    z-index: 2;
+  }
+}
