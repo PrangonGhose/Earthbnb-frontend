@@ -53,11 +53,11 @@ function Navbar({ handleLogout }) { // eslint-disable-line
         </div>
         <div className="links-container display-none">
           <ul className="nav-items">
-            <li><NavLink to="/home" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>HOUSES</NavLink></li>
-            <li><NavLink to="/reserve" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>RESERVE</NavLink></li>
-            <li><NavLink to="/MyReservations" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>MY RESERVATIONS</NavLink></li>
-            <li><NavLink to="/AddProperty" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>ADD A HOUSE</NavLink></li>
-            <li><NavLink to="/DeleteProperty" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>DELETE A HOUSE</NavLink></li>
+            <li><NavLink to="/home" className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={handleMenuClick}>HOUSES</NavLink></li>
+            <li><NavLink to="/reserve" className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={handleMenuClick}>RESERVE</NavLink></li>
+            <li><NavLink to="/MyReservations" className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={handleMenuClick}>MY RESERVATIONS</NavLink></li>
+            <li><NavLink to="/AddProperty" className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={handleMenuClick}>ADD A HOUSE</NavLink></li>
+            <li><NavLink to="/DeleteProperty" className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={handleMenuClick}>DELETE A HOUSE</NavLink></li>
           </ul>
         </div>
         <button type="button" className="logout-btn" onClick={handleLogout}>Logout</button>
