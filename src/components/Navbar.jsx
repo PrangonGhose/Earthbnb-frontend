@@ -3,13 +3,15 @@ import { NavLink } from 'react-router-dom';
 import './stylesheets/Navbar.css';
 import { TbMenu } from 'react-icons/tb';
 import { GrFormClose } from 'react-icons/gr';
+import { func } from 'prop-types';
 import ficon from '../assets/fb-icon.png';
 import twicon from '../assets/tw-icon.png';
 import gicon from '../assets/g-icon.png';
 import picon from '../assets/p-icon.png';
 import vicon from '../assets/v-icon.png';
 
-function Navbar({ handleLogout }) { // eslint-disable-line
+
+export default function Navbar({ handleLogout }) {
   const [menuIsShowing, setMenuIsShowing] = useState(false);
 
   const handleMenuClick = () => {
@@ -43,7 +45,7 @@ function Navbar({ handleLogout }) { // eslint-disable-line
     Logout.classList.toggle('display-none');
     Footer.classList.toggle('display-none');
   };
-
+  
   return (
     <nav className="gen-navbar-container p-0">
       <div className="tb-menu">
@@ -82,4 +84,6 @@ function Navbar({ handleLogout }) { // eslint-disable-line
   );
 }
 
-export default Navbar;
+Navbar.propTypes = {
+  handleLogout: func.isRequired,
+};

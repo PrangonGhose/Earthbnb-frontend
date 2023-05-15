@@ -1,13 +1,13 @@
 import React from 'react';
-import { string } from 'prop-types';
+import { number, string } from 'prop-types';
 
-export default function Option(props) {
-  const { name } = props;
+export default function Option({ name, id }) {
   return (
-    <option value={name.toLowerCase()}>{name}</option>
+    <option name={name} value={id}>{name}</option>
   );
 }
 
 Option.propTypes = {
   name: string.isRequired,
+  id: number.isRequired,
 };

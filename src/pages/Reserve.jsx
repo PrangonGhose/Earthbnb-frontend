@@ -1,12 +1,166 @@
-import React from 'react';
-import './stylesheets_page/reserve.css';
-import { useSelector } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useLocation, useNavigate } from 'react-router';
+import DatePicker from 'react-datepicker';
+import { func } from 'prop-types';
 import HideShowMenu from '../components/HideShowMenu';
 import Option from '../components/Option';
+import './stylesheets_page/reserve.css';
+import 'react-datepicker/dist/react-datepicker.css';
+import { getHouses } from '../redux/house/house';
 
-export default function Reserve() {
+export default function Reserve({ loginStatus }) {
   const houses = useSelector((state) => state.houses);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const selectedHouse = location.state ? location.state : {};
+
+  const [user, setUser] = useState({});
+  const [house, setHouse] = useState(selectedHouse);
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+  const [disabledDates, setDisabledDates] = useState([]);
+  const [inputStartDisabled, setInputStartDisabled] = useState(true);
+  const [inputEndDisabled, setInputEndDisabled] = useState(true);
+  const [status, setStatus] = useState('');
+  const [minEndDate, setMinEndDate] = useState(new Date());
+
+  useEffect(() => {
+    (async () => {
+      const { isLoggedIn, user } = await loginStatus();
+      if (isLoggedIn) {
+        dispatch(getHouses());
+        setUser(user);
+        if (Object.keys(house).length !== 0) {
+          document.querySelector('select').querySelector(`option[value="${house.id}"]`).selected = true;
+          setInputStartDisabled(false);
+        }
+      } else {
+        navigate('/');
+      }
+    })();
+  }, [dispatch, house, loginStatus, navigate]);
+
+  useEffect(() => {
+    const minEnd = new Date();
+    if (startDate !== null) {
+      minEnd.setDate(startDate.getDate() + 1);
+      minEnd.setMonth(startDate.getMonth());
+      minEnd.setYear(startDate.getFullYear());
+    }
+    setMinEndDate(minEnd);
+  }, [startDate]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setStatus('');
+    }, 5000);
+  }, [status]);
+
+  const handleDisableDates = async (house) => {
+    const startingDates = [];
+    const endingDates = [];
+    const range = [];
+    const response = await fetch(`http://localhost:3000/houses/${house.id}`);
+    const data = await response.json();
+
+    for (let i = 0; i < data.reservations.length; i += 1) {
+      startingDates.push(data.reservations[i].starting_date);
+      endingDates.push(data.reservations[i].ending_date);
+    }
+
+    for (let i = 0; i < startingDates.length; i += 1) {
+      const start = new Date(startingDates[i]);
+      const end = new Date(endingDates[i]);
+      const currDate = new Date(start);
+      while (currDate <= end) {
+        const date = new Date(currDate);
+        range.push(date);
+        currDate.setDate(currDate.getDate() + 1);
+      }
+    }
+    setDisabledDates(range);
+  };
+
+  useEffect(() => {
+    if (Object.entries(house).length !== 0) {
+      handleDisableDates(house);
+    }
+  }, [house]);
+
+  const handleHouseChange = async (event) => {
+    if (event.target.value !== '') {
+      setHouse({
+        ...house,
+        id: event.target.value,
+        house_name: event.target.name,
+      });
+      setInputStartDisabled(false);
+    } else {
+      setInputStartDisabled(true);
+    }
+    setStatus('');
+    setInputEndDisabled(true);
+    setStartDate(null);
+    setEndDate(null);
+  };
+
+  const handleStartDateChange = async (date) => {
+    const tempStart = new Date();
+    tempStart.setDate(date.getDate());
+    tempStart.setMonth(date.getMonth());
+    tempStart.setYear(date.getFullYear());
+    setStartDate(tempStart);
+    setInputEndDisabled(false);
+  };
+
+  const handleEndDateChange = (date) => {
+    const tempEnd = new Date();
+    tempEnd.setDate(date.getDate());
+    tempEnd.setMonth(date.getMonth());
+    tempEnd.setYear(date.getFullYear());
+    setEndDate(tempEnd);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const reservationStartDate = startDate.toISOString().split('T')[0];
+    const reservationEndDate = endDate.toISOString().split('T')[0];
+
+    for (let i = 0; i < disabledDates.length; i += 1) {
+      if (reservationStartDate < disabledDates[i].toISOString().split('T')[0] && reservationEndDate > disabledDates[i].toISOString().split('T')[0]) {
+        setStatus('The house is already reserved in this date range');
+        setEndDate(null);
+        return;
+      }
+    }
+
+    const newReservation = {
+      user_id: user.id,
+      house_id: house.id,
+      starting_date: reservationStartDate,
+      ending_date: reservationEndDate,
+    };
+
+    const response = await fetch('http://localhost:3000/reservations/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newReservation),
+    });
+
+    const data = await response.json();
+    if (data.status === 'created') {
+      setStatus('House reserved successfully');
+      setInputStartDisabled(true);
+      setInputEndDisabled(true);
+      setStartDate(null);
+      setEndDate(null);
+      document.querySelector('select').value = '';
+    }
+  };
 
   return (
     <div className="reserve_container">
@@ -22,14 +176,16 @@ export default function Reserve() {
             architecture to lavish amenities, our luxury houses offer a lifestyle of
             unparalleled elegance.
           </p>
-          <div className="form_container">
-            <select name="houses" className="select_house">
+          <form className="form_container" onSubmit={handleSubmit}>
+            <select id="houses" name="houses" className="select_house" onChange={handleHouseChange} required>
+              <option value="">Select A House</option>
               {
                 houses.length > 0 ? (
                   houses.map((house) => (
                     <Option
-                      key={uuidv4()}
-                      name={house.name}
+                      key={house.id}
+                      name={house.house_name}
+                      id={house.id}
                     />
                   ))
                 ) : (
@@ -40,19 +196,49 @@ export default function Reserve() {
             <div className="date-inputs">
               <label htmlFor="start-date" className="text-white">
                 Start Date: &#160;
-                <input type="date" id="start-date" name="start-date" />
+                { /* input added only to avoid linters */ }
+                <input type="text" hidden />
+                <DatePicker
+                  dateFormat="yyyy-MM-dd"
+                  id="start-date"
+                  selected={startDate}
+                  onChange={(date) => handleStartDateChange(date)}
+                  excludeDates={disabledDates}
+                  minDate={new Date()}
+                  placeholderText="YYYY-MM-DD"
+                  disabled={inputStartDisabled}
+                  required
+                />
               </label>
             </div>
-            <div className="date-inputs">
+            <div className="date-inputs text-white">
               <label htmlFor="end-date" className="text-white">
                 End Date: &#160;
-                <input type="date" id="end-date" name="end-date" />
+                { /* input added only to avoid linters */ }
+                <input type="text" hidden />
+                <DatePicker
+                  dateFormat="yyyy-MM-dd"
+                  onChange={(date) => handleEndDateChange(date)}
+                  selected={endDate}
+                  excludeDates={disabledDates}
+                  minDate={minEndDate}
+                  placeholderText="YYYY-MM-DD"
+                  disabled={inputEndDisabled}
+                  required
+                />
               </label>
             </div>
             <button type="submit">Reserve Now</button>
+          </form>
+          <div className="mt-5">
+            {status}
           </div>
         </div>
       </div>
     </div>
   );
 }
+
+Reserve.propTypes = {
+  loginStatus: func.isRequired,
+};
