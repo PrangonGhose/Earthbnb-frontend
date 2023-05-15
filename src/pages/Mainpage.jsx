@@ -58,8 +58,8 @@ export default function Mainpage() {
           <House
             key={uuidv4()}
             id={house.id}
-            name={house.name}
-            pictures={house.pictures}
+            name={house.house_name}
+            pictures={house.picture}
             description={house.description}
           />
         ))}

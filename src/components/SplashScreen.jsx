@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
+import { func } from 'prop-types';
 import pic from '../assets/username.png';
 import './stylesheets/SplashScreen.css';
 
-function SplashScreen({ loginStatus }) { // eslint-disable-line
+export default function SplashScreen({ loginStatus }) {
   function addClass() {
     const container = document.getElementById('container');
     container.classList.add('right-panel-active');
@@ -149,4 +150,6 @@ function SplashScreen({ loginStatus }) { // eslint-disable-line
   );
 }
 
-export default SplashScreen;
+SplashScreen.propTypes = {
+  loginStatus: func.isRequired,
+};
