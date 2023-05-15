@@ -10,7 +10,11 @@ function DeleteProperty() {
 
   useEffect(() => {
     dispatch(getHouses());
-  }, [dispatch, houses]);
+    const housesContainer = document.querySelectorAll('.house_article');
+    housesContainer.forEach((house) => {
+      house.classList.add('transition');
+    });
+  }, [dispatch]);
 
   const handleDelete = (houseId) => {
     dispatch(deleteHouse(houseId));
