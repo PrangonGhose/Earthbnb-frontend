@@ -10,7 +10,6 @@ import DeleteProperty from './components/DeleteProperty';
 import HouseDetail from './pages/HouseDetail';
 import Mainpage from './pages/Mainpage';
 import './App.css';
-import HideShowMenu from './components/HideShowMenu';
 import './components/stylesheets/hideShowMenu.css';
 
 function App() {
@@ -52,7 +51,6 @@ function App() {
     <div className="App container-fluid p-0">
       <div className="d-flex p-0 vh-100">
         {location.pathname !== '/' && location.pathname !== '/Register' && location.pathname !== '/Login' && <Navbar handleLogout={handleLogout} />}
-        {location.pathname !== '/home' && location.pathname !== '/' && location.pathname !== '/Register' && location.pathname !== '/Login' && location.pathname !== '/reserve' && location.pathname !== '/MyReservations' && <HideShowMenu />}
         <Routes>
           <Route exact path="/" element={<SplashScreen loginStatus={loginStatus} />} />
           <Route path="/home" element={<Mainpage />} />

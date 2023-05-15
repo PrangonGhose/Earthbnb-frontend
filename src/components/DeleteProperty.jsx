@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getHouses, deleteHouse } from '../redux/house/house';
 import House from './House';
 import './stylesheets/DeleteProperty.css';
+import HideShowMenu from './HideShowMenu';
 
 function DeleteProperty() {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ function DeleteProperty() {
 
   return (
     <div className="delete-main-container">
+      <HideShowMenu />
       <h1 className="delete-title">What Property Do You Wish To Delete?</h1>
       <div className="delete-houses-container">
         {houses.map((house) => (

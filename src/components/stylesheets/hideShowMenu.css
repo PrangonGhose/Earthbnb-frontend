@@ -1,3 +1,10 @@
+.hide-show-menu-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
 @media all and (max-width: 786px) {
   .hide-show-menu-btn {
     display: none;

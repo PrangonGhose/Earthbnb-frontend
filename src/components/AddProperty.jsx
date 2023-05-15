@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createHouse } from '../redux/house/house';
+import HideShowMenu from './HideShowMenu';
 import './stylesheets/AddProperty.css';
 
 function AddProperty() {
@@ -38,6 +39,7 @@ function AddProperty() {
 
   return (
     <div className="main-add-container">
+      <HideShowMenu />
       <div className="add-form-container">
         <h1 className="add-form-title">Add A New House</h1>
         {successMessage && <p>{successMessage}</p>}
