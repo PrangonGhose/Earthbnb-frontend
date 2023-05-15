@@ -13,10 +13,10 @@ export default function HouseDetail() {
     <div className="house-detail-container d-flex">
       <section className="house-section d-flex justify-content-evenly">
         <article className="house-img">
-          <img src={house.pictures} alt="" />
+          <img src={house.picture} alt="" />
         </article>
         <article className="house-info d-flex">
-          <h2 className="align-self-end">{house.name}</h2>
+          <h2 className="align-self-end">{house.house_name}</h2>
           <p className="align-self-end deposit">- $100 deposit for house maintenance</p>
           <table className="mb-5">
             <tbody>
