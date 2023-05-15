@@ -101,6 +101,10 @@
     justify-content: start;
     margin-top: 5rem;
   }
+
+  .overlay-green {
+    padding-top: 2rem;
+  }
 }
 
 @media all and (max-width: 1159px) {
