@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './stylesheets/Navbar.css';
 import { TbMenu } from 'react-icons/tb';
+import { GrFormClose } from 'react-icons/gr';
 import ficon from '../assets/fb-icon.png';
 import twicon from '../assets/tw-icon.png';
 import gicon from '../assets/g-icon.png';
@@ -9,6 +10,7 @@ import picon from '../assets/p-icon.png';
 import vicon from '../assets/v-icon.png';
 
 function Navbar({ handleLogout }) { // eslint-disable-line
+  const [menuIsShowing, setMenuIsShowing] = useState(false);
 
   const handleMenuClick = () => {
     const NavContainer = document.querySelector('#navbar');
@@ -34,7 +36,7 @@ function Navbar({ handleLogout }) { // eslint-disable-line
         }, 400);
       }
     }
-
+    setMenuIsShowing(!menuIsShowing);
     NavContainer.classList.toggle('hide-in-mobile');
     MenuIcon.classList.toggle('show-tb-menu');
     LinksContainer.classList.toggle('display-none');
@@ -45,7 +47,9 @@ function Navbar({ handleLogout }) { // eslint-disable-line
   return (
     <nav className="gen-navbar-container p-0">
       <div className="tb-menu">
-        <TbMenu onClick={handleMenuClick} />
+        { menuIsShowing
+          ? <GrFormClose onClick={handleMenuClick} />
+          : <TbMenu onClick={handleMenuClick} /> }
       </div>
       <div id="navbar" className="main-navbar-container active-navbar hide-in-mobile">
         <div className="logo-container d-flex align-items-center gap-3">
