@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
+import { func } from 'prop-types';
 import pic from '../assets/username.png';
 import './stylesheets/SplashScreen.css';
 
-function SplashScreen({ loginStatus }) { // eslint-disable-line
+export default function SplashScreen({ loginStatus }) {
   function addClass() {
     const container = document.getElementById('container');
     container.classList.add('right-panel-active');
@@ -114,7 +115,7 @@ function SplashScreen({ loginStatus }) { // eslint-disable-line
           <form className="form" action="#" onSubmit={handleLogin}>
             <div>
               {user.errors.map((error) => (
-                <h3 key={error}>{error}</h3>
+                <h3 className="error-notification" key={error}>{error}</h3>
               ))}
             </div>
             <h1 className="form-title">Sign in</h1>
@@ -130,14 +131,14 @@ function SplashScreen({ loginStatus }) { // eslint-disable-line
             <div className="overlay-panel overlay-left">
               <h1 className="splash-logo">Earthbnb</h1>
               <h1>Hello, Friend!</h1>
-              <p>Enter your personal details and start your jorney with us</p>
+              <p className="instruction">Enter your personal details and start your jorney with us</p>
               <p>Already have an account with us?</p>
               <button type="submit" onClick={removeClass} className="ghost" id="signIn">Sign In</button>
             </div>
             <div className="overlay-panel overlay-right">
               <h1 className="splash-logo">Earthbnb</h1>
               <h1>Welcome Back!</h1>
-              <p>To keep connected with us please login with your personal info</p>
+              <p className="instruction">To keep connected with us please login with your personal info</p>
               <p>Don&apos;t have an account with us?</p>
               <button type="submit" onClick={addClass} className="ghost" id="signUp">Sign Up</button>
             </div>
@@ -149,4 +150,6 @@ function SplashScreen({ loginStatus }) { // eslint-disable-line
   );
 }
 
-export default SplashScreen;
+SplashScreen.propTypes = {
+  loginStatus: func.isRequired,
+};

@@ -1,19 +1,27 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
+import { func } from 'prop-types';
+import { useNavigate } from 'react-router';
 import { getReservations } from '../redux/reservation/reservation';
 import ReservationTr from '../components/ReservationTr';
 import HideShowMenu from '../components/HideShowMenu';
 import './stylesheets_page/reservation.css';
 
-export default function MyReservations() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getReservations());
-  }, [dispatch]);
-
+export default function MyReservations({ loginStatus }) {
   const reservations = useSelector((state) => state.reservations);
-  const houses = useSelector((state) => state.houses);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    (async () => {
+      const { isLoggedIn, user } = await loginStatus();
+      if (isLoggedIn) {
+        dispatch(getReservations(user));
+      } else {
+        navigate('/');
+      }
+    })();
+  }, [dispatch, loginStatus, navigate]);
 
   return (
     <div className="reserve_container">
@@ -28,21 +36,16 @@ export default function MyReservations() {
               <div className="col">Ending date</div>
             </li>
             {
-              reservations.length > 0 && houses.length > 0 ? (
-                reservations.map((reservation) => {
-                  const house = houses.find(
-                    (item) => item.id === parseInt(reservation.house_id, 10),
-                  );
-                  return (
-                    <ReservationTr
-                      key={uuidv4()}
-                      id={reservation.id}
-                      name={house.name}
-                      startingDate={reservation.starting_date}
-                      endingDate={reservation.ending_date}
-                    />
-                  );
-                })
+              reservations.length > 0 ? (
+                reservations.map((reservation) => (
+                  <ReservationTr
+                    key={reservation.id}
+                    id={reservation.id}
+                    name={reservation.house.house_name}
+                    startingDate={reservation.starting_date}
+                    endingDate={reservation.ending_date}
+                  />
+                ))
               ) : (
                 <li className="table-row">
                   <div className="col" data-label="House">No Reservations</div>
@@ -55,3 +58,7 @@ export default function MyReservations() {
     </div>
   );
 }
+
+MyReservations.propTypes = {
+  loginStatus: func.isRequired,
+};
