@@ -4,6 +4,12 @@
   overflow: auto;
 }
 
+@media (max-width: 767px) {
+  .delete-main-container {
+    padding-top: 65px;
+  }
+}
+
 .delete-houses-container {
   display: flex;
   gap: 5%;
