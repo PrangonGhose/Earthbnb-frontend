@@ -14,6 +14,13 @@ export default function Mainpage() {
   const [initalHouse, setInitalHouse] = useState(3);
   const houses = useSelector((state) => state.houses);
 
+  setTimeout(() => {
+    const housesContainer = document.querySelectorAll('.house_article');
+    housesContainer.forEach((house) => {
+      house.classList.add('transition');
+    });
+  }, 10);
+
   useEffect(() => {
     dispatch(getHouses());
   }, [dispatch]);
@@ -48,6 +55,11 @@ export default function Mainpage() {
   }, []);
 
   const handleClickRightArrow = () => {
+    const housesContainer = document.querySelectorAll('.house_article');
+    housesContainer.forEach((house) => {
+      house.classList.add('transition');
+    });
+
     if (visibleHouses < houses.length) {
       const screenWidth = window.innerWidth;
       if (screenWidth < 990) {
@@ -81,6 +93,11 @@ export default function Mainpage() {
       setHasHousesToRight(true);
     }
     setHasHousesToLeft(visibleHouses - initalHouse > 0);
+
+    const housesContainer = document.querySelectorAll('.house_article');
+    housesContainer.forEach((house) => {
+      house.classList.add('transition');
+    });
   };
 
   return (

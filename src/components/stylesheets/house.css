@@ -5,6 +5,8 @@
   align-items: center;
   max-width: 19rem;
   text-align: center;
+  transform: scale(0) translate(-100%);
+  transition: 0.4s ease-in-out;
 }
 
 .house_pic {
@@ -18,4 +20,8 @@
 
 .name_house_container {
   height: 2.5rem;
+}
+
+.transition {
+  transform: scale(1);
 }
