@@ -21,27 +21,29 @@ function DeleteProperty() {
   };
 
   return (
-    <div className="delete-main-container">
+    <div className="d-flex position-relative">
       <HideShowMenu />
-      <h1 className="delete-title">What Property Do You Wish To Delete?</h1>
-      <div className="delete-houses-container">
-        {houses.map((house) => (
-          <div className="delete-house-container" key={house.id}>
-            <House
-              id={house.id}
-              name={house.house_name}
-              pictures={house.picture}
-              description={house.description}
-            />
-            <button
-              type="button"
-              className="delete-btn"
-              onClick={() => handleDelete(house.id)}
-            >
-              Delete
-            </button>
-          </div>
-        ))}
+      <div className="delete-main-container">
+        <h1 className="delete-title">What Property Do You Wish To Delete?</h1>
+        <div className="delete-houses-container">
+          {houses.map((house) => (
+            <div className="delete-house-container" key={house.id}>
+              <House
+                id={house.id}
+                name={house.house_name}
+                pictures={house.picture}
+                description={house.description}
+              />
+              <button
+                type="button"
+                className="delete-btn"
+                onClick={() => handleDelete(house.id)}
+              >
+                Delete
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
