@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getHouses, deleteHouse } from '../redux/house/house';
+import { getHouses } from '../redux/house/house';
 import House from '../components/House';
 import './stylesheets_page/DeleteProperty.css';
 import HideShowMenu from '../components/HideShowMenu';
@@ -11,14 +11,13 @@ function DeleteProperty() {
 
   useEffect(() => {
     dispatch(getHouses());
-    const housesContainer = document.querySelectorAll('.house_article');
-    housesContainer.forEach((house) => {
-      house.classList.add('transition');
-    });
   }, [dispatch]);
 
-  const handleDelete = (houseId) => {
-    dispatch(deleteHouse(houseId));
+  const handleDelete = async (houseId) => {
+    await fetch(`http://127.0.0.1:3000/houses/${houseId}`, {
+      method: 'DELETE',
+    });
+    dispatch(getHouses());
   };
 
   return (
