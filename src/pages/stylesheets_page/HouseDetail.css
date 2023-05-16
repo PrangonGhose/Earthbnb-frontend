@@ -29,7 +29,7 @@
 .house-info {
   flex-direction: column;
   height: 100%;
-  padding-top: 15vh;
+  padding-top: 10vh;
   justify-self: flex-end;
   max-width: 25vw;
 }
@@ -75,6 +75,22 @@
   font-weight: 700;
   font-size: 0.8rem;
   margin-bottom: 2rem;
+}
+
+/* styles for screens smaller than 767px */
+@media (max-width: 767px) {
+  .house-section {
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+    overflow-y: auto;
+  }
+
+  .house-info {
+    flex-direction: column;
+    padding-top: 1rem;
+    max-width: 100%;
+  }
 }
 
 /* styles for screens smaller than 1500px */

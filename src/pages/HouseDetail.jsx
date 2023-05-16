@@ -52,15 +52,14 @@ export default function HouseDetail() {
               </tr>
             </tbody>
           </table>
-          <div className="d-flex luxury-percent align-self-end">
-            <span>100% Luxury</span>
-            &nbsp;House
+          <div className="d-flex luxury-percent align-self-end hide-in-mobile">
+            <span className="hide-in-mobile">100% Luxury House</span>
           </div>
-          <div className="discover text-right align-self-end mb-4">
+          <div className="discover text-right align-self-end mb-4 hide-in-mobile">
             DISCOVER MORE HOUSES
             <AiOutlineRight className="orange" />
           </div>
-          <img src={color} alt="Color circle" className="align-self-end mb-5" />
+          <img src={color} alt="Color circle" className="align-self-end mb-5 hide-in-mobile" />
           <button type="button" className="rent text-white align-self-end" onClick={handleReserveClick}>
             Reserve
             <AiOutlineRightCircle className="text-white" />
