@@ -89,7 +89,7 @@ export default function Mainpage() {
       }
       setHasHousesToRight(true);
     }
-    setHasHousesToLeft(visibleHouses - initalHouse >= 0);
+    setHasHousesToLeft(visibleHouses - initalHouse >= 1);
   };
 
   return (
