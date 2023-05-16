@@ -1,4 +1,13 @@
-.hide {
+.gen-navbar-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  transition: 0.4s ease;
+  z-index: 100;
+}
+
+.hide-navbar {
   display: none;
 }
 
@@ -35,10 +44,6 @@
 
 #hide-arrow {
   display: none;
-}
-
-.active-navbar {
-  display: flex;
 }
 
 .logo-container,
@@ -136,9 +141,21 @@ ul {
 
 /* styles for screens smaller than 1500px */
 @media (max-width: 767px) {
+  .gen-navbar-container {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    bottom: 0;
+  }
+
+  .hide-navbar {
+    display: block;
+  }
+
   .tb-menu {
     display: block;
     position: fixed;
+    left: 0;
     font-size: 3rem;
     color: #a2b859;
     z-index: 122;
@@ -147,41 +164,16 @@ ul {
     margin-left: 1rem;
   }
 
-  .display-none {
-    transform: translateX(-300px);
-    transition: 0.4s;
+  .logo-container {
+    margin-top: 3rem;
+    visibility: hidden;
   }
 
-  .main-navbar-container button {
-    transform: translateX(-300px);
-    transition: 0.4s;
-  }
-
-  .gen-navbar-container {
-    position: absolute;
-    top: 0;
+  .show-navbar {
     left: 0;
-    bottom: 0;
-    z-index: 1;
-    width: fit-content;
   }
 
-  .hide-in-mobile {
-    transform: translateX(-300px);
-    transition: 0.4s ease-in-out;
-  }
-
-  /* Show navbar */
-  .show-nav-bar {
-    transform: translateX(300px);
-    transition: 0.4s;
-  }
-
-  .show-tb-menu {
+  .black {
     color: black;
-  }
-
-  #navbar {
-    display: flex;
   }
 }

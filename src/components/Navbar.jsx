@@ -15,19 +15,12 @@ export default function Navbar({ handleLogout }) {
   const navRef = useRef();
 
   const handleMenuClick = () => {
-    const NavContainer = document.querySelector('#navbar');
+    const NavContainer = document.querySelector('.gen-navbar-container');
     const MenuIcon = document.querySelector('.tb-menu');
-    const LinksContainer = document.querySelector('.links-container');
-    const Logout = document.querySelector('.main-navbar-container button');
-    const Footer = document.querySelector('.footer');
-    const showArrow = document.querySelector('#show-arrow');
-    const hideArrow = document.querySelector('#hide-arrow');
     const paginationLeftArrow = document.querySelector('.arrow.left');
+
     if (!NavContainer.classList.contains('active-navbar')) {
       NavContainer.classList.add('active-navbar');
-      NavContainer.style.display = 'flex';
-      hideArrow.style.display = 'none';
-      showArrow.style.display = 'block';
     }
 
     if (paginationLeftArrow) {
@@ -39,11 +32,8 @@ export default function Navbar({ handleLogout }) {
       }
     }
     setMenuIsShowing(!menuIsShowing);
-    NavContainer.classList.toggle('hide-in-mobile');
-    MenuIcon.classList.toggle('show-tb-menu');
-    LinksContainer.classList.toggle('display-none');
-    Logout.classList.toggle('display-none');
-    Footer.classList.toggle('display-none');
+    NavContainer.classList.toggle('show-navbar');
+    MenuIcon.classList.toggle('black');
   };
 
   useEffect(() => {
@@ -65,7 +55,7 @@ export default function Navbar({ handleLogout }) {
           ? <GrFormClose onClick={handleMenuClick} />
           : <TbMenu onClick={handleMenuClick} /> }
       </div>
-      <div id="navbar" className="main-navbar-container active-navbar hide-in-mobile">
+      <div id="navbar" className="main-navbar-container d-flex">
         <div className="logo-container d-flex align-items-center gap-3">
           <h1 className="logo-text nav-logo display-none">Earthbnb</h1>
         </div>
