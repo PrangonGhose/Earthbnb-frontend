@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import './stylesheets_page/HouseDetail.css';
 import { AiOutlineRight, AiOutlineRightCircle } from 'react-icons/ai';
 import color from '../assets/c-color.png';
+import HideShowMenu from '../components/HideShowMenu';
 
 export default function HouseDetail() {
   const { id } = useParams();
@@ -17,6 +18,7 @@ export default function HouseDetail() {
 
   return (
     <div className="house-detail-container d-flex">
+      <HideShowMenu />
       <section className="house-section d-flex justify-content-evenly">
         <article className="house-img">
           <img src={house.picture} alt="" />
