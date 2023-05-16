@@ -1,20 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import './stylesheets_page/HouseDetail.css';
 import { AiOutlineRight, AiOutlineRightCircle } from 'react-icons/ai';
 import color from '../assets/c-color.png';
 import HideShowMenu from '../components/HideShowMenu';
+import { getHousesById } from '../redux/house/house';
 
 export default function HouseDetail() {
   const { id } = useParams();
-  const house = useSelector((state) => state.houses.find((item) => item.id === parseInt(id, 10)));
+  const house = useSelector((state) => state.houses);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleReserveClick = () => {
     const selectedHouse = house;
     navigate('/reserve', { state: selectedHouse });
   };
+
+  useEffect(() => {
+    dispatch(getHousesById(id));
+  }, []);
 
   return (
     <div className="house-detail-container d-flex">

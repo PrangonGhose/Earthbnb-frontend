@@ -9,6 +9,14 @@ export const getHouses = createAsyncThunk(
   },
 );
 
+export const getHousesById = createAsyncThunk(
+  'houses/getHouses',
+  async (id) => {
+    const respond = await axios.get(`http://localhost:3000/houses/${id}`);
+    return respond.data;
+  },
+);
+
 export const createHouse = createAsyncThunk(
   'houses/create',
   async (houseData) => {
