@@ -15,13 +15,6 @@ export default function Mainpage() {
   const [initalHouse, setInitalHouse] = useState(3);
   const houses = useSelector((state) => state.houses);
 
-  setTimeout(() => {
-    const housesContainer = document.querySelectorAll('.house_article');
-    housesContainer.forEach((house) => {
-      house.classList.add('transition');
-    });
-  }, 10);
-
   useEffect(() => {
     dispatch(getHouses());
   }, [dispatch]);
@@ -70,7 +63,7 @@ export default function Mainpage() {
       }
       setHasHousesToLeft(true);
     }
-    setHasHousesToRight(visibleHouses < houses.length - 1);
+    setHasHousesToRight(visibleHouses < houses.length - initalHouse);
   };
 
   const handleClickLeftArrow = () => {
@@ -89,7 +82,7 @@ export default function Mainpage() {
       }
       setHasHousesToRight(true);
     }
-    setHasHousesToLeft(visibleHouses - initalHouse >= 1);
+    setHasHousesToLeft(visibleHouses - initalHouse >= initalHouse + 1);
   };
 
   return (
