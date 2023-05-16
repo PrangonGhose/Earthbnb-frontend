@@ -56,11 +56,6 @@ export default function Mainpage() {
   }, []);
 
   const handleClickRightArrow = () => {
-    const housesContainer = document.querySelectorAll('.house_article');
-    housesContainer.forEach((house) => {
-      house.classList.add('transition');
-    });
-
     if (visibleHouses < houses.length) {
       const screenWidth = window.innerWidth;
       if (screenWidth < 990) {
@@ -75,10 +70,11 @@ export default function Mainpage() {
       }
       setHasHousesToLeft(true);
     }
-    setHasHousesToRight(visibleHouses < houses.length);
+    setHasHousesToRight(visibleHouses < houses.length - 1);
   };
 
   const handleClickLeftArrow = () => {
+    // console.log(visibleHouses, initalHouse);
     if (visibleHouses - initalHouse > 0) {
       const screenWidth = window.innerWidth;
       if (screenWidth < 990) {
@@ -93,12 +89,7 @@ export default function Mainpage() {
       }
       setHasHousesToRight(true);
     }
-    setHasHousesToLeft(visibleHouses - initalHouse > 0);
-
-    const housesContainer = document.querySelectorAll('.house_article');
-    housesContainer.forEach((house) => {
-      house.classList.add('transition');
-    });
+    setHasHousesToLeft(visibleHouses - initalHouse >= 0);
   };
 
   return (
