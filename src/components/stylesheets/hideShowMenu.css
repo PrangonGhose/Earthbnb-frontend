@@ -5,7 +5,7 @@
   z-index: 5;
 }
 
-@media all and (max-width: 786px) {
+@media all and (max-width: 767px) {
   .hide-show-menu-btn {
     display: none;
   }
