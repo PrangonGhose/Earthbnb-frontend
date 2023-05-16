@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getHouses, deleteHouse } from '../redux/house/house';
-import House from './House';
-import './stylesheets/DeleteProperty.css';
-import HideShowMenu from './HideShowMenu';
+import House from '../components/House';
+import './stylesheets_page/DeleteProperty.css';
+import HideShowMenu from '../components/HideShowMenu';
 
 function DeleteProperty() {
   const dispatch = useDispatch();

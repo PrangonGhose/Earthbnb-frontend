@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createHouse } from '../redux/house/house';
-import HideShowMenu from './HideShowMenu';
-import './stylesheets/AddProperty.css';
+import HideShowMenu from '../components/HideShowMenu';
+import './stylesheets_page/AddProperty.css';
 
 function AddProperty() {
   const dispatch = useDispatch();
