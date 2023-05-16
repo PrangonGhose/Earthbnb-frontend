@@ -23,16 +23,6 @@ export default function HideShowMenu() {
       showArrow.style.display = 'block';
     }
     dispatch(toggleNavbar());
-
-    // const MenuIcon = document.querySelector('.tb-menu');
-    // const LinksContainer = document.querySelector('.links-container');
-    // const Logout = document.querySelector('.main-navbar-container button');
-    // const Footer = document.querySelector('.footer');
-    // navContainer.classList.toggle('hide-in-mobile');
-    // MenuIcon.classList.toggle('show-tb-menu');
-    // LinksContainer.classList.toggle('display-none');
-    // Logout.classList.toggle('display-none');
-    // Footer.classList.toggle('display-none');
   }
   return (
     <button type="button" onClick={toggleMenu} className="back-btn hide-show-menu-btn">
