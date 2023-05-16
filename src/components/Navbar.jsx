@@ -17,20 +17,11 @@ export default function Navbar({ handleLogout }) {
   const handleMenuClick = () => {
     const NavContainer = document.querySelector('.gen-navbar-container');
     const MenuIcon = document.querySelector('.tb-menu');
-    const paginationLeftArrow = document.querySelector('.arrow.left');
 
     if (!NavContainer.classList.contains('active-navbar')) {
       NavContainer.classList.add('active-navbar');
     }
 
-    if (paginationLeftArrow) {
-      paginationLeftArrow.style.zIndex = '0';
-      if (MenuIcon.classList.contains('show-tb-menu')) {
-        setTimeout(() => {
-          paginationLeftArrow.style.zIndex = '100';
-        }, 400);
-      }
-    }
     setMenuIsShowing(!menuIsShowing);
     NavContainer.classList.toggle('show-navbar');
     MenuIcon.classList.toggle('black');
