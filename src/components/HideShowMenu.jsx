@@ -9,12 +9,12 @@ export default function HideShowMenu() {
     const hideArrow = document.querySelector('#hide-arrow');
     if (navContainer.classList.contains('active-navbar')) {
       navContainer.classList.remove('active-navbar');
-      navContainer.style.display = 'none';
+      navContainer.classList.add('hide');
       hideArrow.style.display = 'block';
       showArrow.style.display = 'none';
     } else {
       navContainer.classList.add('active-navbar');
-      navContainer.style.display = 'flex';
+      navContainer.classList.remove('hide');
       hideArrow.style.display = 'none';
       showArrow.style.display = 'block';
     }
