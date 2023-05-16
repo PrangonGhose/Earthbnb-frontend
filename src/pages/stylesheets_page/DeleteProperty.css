@@ -1,7 +1,14 @@
 .delete-main-container {
+  position: relative;
   flex-grow: 1;
   padding: 2%;
   overflow: auto;
+}
+
+@media (max-width: 767px) {
+  .delete-main-container {
+    padding-top: 65px;
+  }
 }
 
 .delete-houses-container {

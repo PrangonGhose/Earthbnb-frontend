@@ -1,3 +1,16 @@
+.gen-navbar-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  transition: 0.4s ease;
+  z-index: 100;
+}
+
+.hide-navbar {
+  display: none;
+}
+
 .logo-text {
   font-family: myFont, sans-serif;
   color: #321811 !important;
@@ -31,10 +44,6 @@
 
 #hide-arrow {
   display: none;
-}
-
-.active-navbar {
-  display: flex;
 }
 
 .logo-container,
@@ -108,4 +117,63 @@ ul {
   text-align: center;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.tb-menu {
+  transform: translateX(-300px);
+  transition: 0.4s;
+  font-size: 0.1px;
+}
+
+.display-none {
+  transform: translateX(0);
+  transition: 0.4s;
+}
+
+.main-navbar-container button {
+  transform: translateX(0);
+  transition: 0.4s;
+}
+
+#navbar {
+  transition: 0.4s ease-in-out;
+}
+
+/* styles for screens smaller than 1500px */
+@media (max-width: 767px) {
+  .gen-navbar-container {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    bottom: 0;
+  }
+
+  .hide-navbar {
+    display: block;
+  }
+
+  .tb-menu {
+    display: block;
+    position: fixed;
+    left: 0;
+    font-size: 3rem;
+    color: #a2b859;
+    z-index: 122;
+    transform: translateX(0);
+    transition: 0.4s;
+    margin-left: 1rem;
+  }
+
+  .logo-container {
+    margin-top: 3rem;
+    visibility: hidden;
+  }
+
+  .show-navbar {
+    left: 0;
+  }
+
+  .black {
+    color: black;
+  }
 }

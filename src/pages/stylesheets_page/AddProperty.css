@@ -1,7 +1,14 @@
 .main-add-container {
+  position: relative;
   background-image: linear-gradient(to left, rgba(255, 127, 0, 0.9), rgba(239, 183, 0, 0.9));
   flex-grow: 1;
-  padding: 3%;
+  padding: 4.7%;
+}
+
+@media (max-width: 767px) {
+  .main-add-container {
+    padding-top: 55px;
+  }
 }
 
 .add-form-container {

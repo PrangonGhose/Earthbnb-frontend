@@ -169,7 +169,7 @@ export default function Reserve({ loginStatus }) {
         <div className="reserve_container_in">
           <h3 className="text-white">RESERVE A HOUSE</h3>
           <span className="line" />
-          <p className="text-center text-white">
+          <p className="text-center text-white hide-in-mobile">
             Discover the epitome of luxury living with our exquisite rental homes.
             Experience a world of opulence and refinement, where every detail has been
             meticulously designed to exceed your expectations. From breathtaking
@@ -194,8 +194,10 @@ export default function Reserve({ loginStatus }) {
               }
             </select>
             <div className="date-inputs">
-              <label htmlFor="start-date" className="text-white">
-                Start Date: &#160;
+              <label htmlFor="start-date" className="text-white d-flex align-items-center">
+                <div className="input-name">
+                  Start Date
+                </div>
                 { /* input added only to avoid linters */ }
                 <input type="text" hidden />
                 <DatePicker
@@ -212,8 +214,10 @@ export default function Reserve({ loginStatus }) {
               </label>
             </div>
             <div className="date-inputs text-white">
-              <label htmlFor="end-date" className="text-white">
-                End Date: &#160;
+              <label htmlFor="end-date" className="text-white d-flex align-items-center">
+                <div className="input-name">
+                  End Date
+                </div>
                 { /* input added only to avoid linters */ }
                 <input type="text" hidden />
                 <DatePicker
@@ -230,7 +234,7 @@ export default function Reserve({ loginStatus }) {
             </div>
             <button type="submit">Reserve Now</button>
           </form>
-          <div className="mt-5">
+          <div className="mt-5 status-notification">
             {status}
           </div>
         </div>
