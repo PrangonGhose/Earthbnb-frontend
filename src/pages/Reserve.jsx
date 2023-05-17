@@ -177,7 +177,7 @@ export default function Reserve({ loginStatus }) {
             unparalleled elegance.
           </p>
           <form className="form_container" onSubmit={handleSubmit}>
-            <select id="houses" name="houses" className="select_house" onChange={handleHouseChange} required>
+            <select id="houses" name="houses" className="select_house mt-3" onChange={handleHouseChange} required>
               <option value="">Select A House</option>
               {
                 houses.length > 0 ? (
@@ -194,7 +194,7 @@ export default function Reserve({ loginStatus }) {
               }
             </select>
             <div className="date-inputs">
-              <label htmlFor="start-date" className="text-white d-flex align-items-center">
+              <label htmlFor="start-date" className="text-white d-flex flex-column align-items-center">
                 <div className="input-name">
                   Start Date
                 </div>
@@ -214,7 +214,7 @@ export default function Reserve({ loginStatus }) {
               </label>
             </div>
             <div className="date-inputs text-white">
-              <label htmlFor="end-date" className="text-white d-flex align-items-center">
+              <label htmlFor="end-date" className="text-white d-flex flex-column align-items-center">
                 <div className="input-name">
                   End Date
                 </div>
@@ -232,7 +232,7 @@ export default function Reserve({ loginStatus }) {
                 />
               </label>
             </div>
-            <button type="submit">Reserve Now</button>
+            <button type="submit" className="mt-3">Reserve Now</button>
           </form>
           <div className="mt-5 status-notification">
             {status}
