@@ -9,13 +9,15 @@
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "eslint": "npx eslint \"**/*.{js,jsx}\"",
-    "stylelint": "npx stylelint \"**/*.{css,scss}\""
+    "stylelint": "npx stylelint \"**/*.{css,scss}\"",
+    "test": "jest --passWithNoTests"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@vitejs/plugin-react-swc": "^3.0.0",
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
+    "jest": "^29.5.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "prop-types": "^15.8.1",
