@@ -32,10 +32,6 @@ export default function Reserve({ loginStatus }) {
       if (isLoggedIn) {
         dispatch(getHouses());
         setUser(user);
-        if (Object.keys(house).length !== 0) {
-          document.querySelector('select').querySelector(`option[value="${house.id}"]`).selected = true;
-          setInputStartDisabled(false);
-        }
       } else {
         navigate('/');
       }
@@ -177,7 +173,7 @@ export default function Reserve({ loginStatus }) {
             unparalleled elegance.
           </p>
           <form className="form_container" onSubmit={handleSubmit}>
-            <select id="houses" name="houses" className="select_house mt-3" onChange={handleHouseChange} required>
+            <select id="houses" name="houses" className="select_house mt-3" value={house.id || ''} onChange={handleHouseChange} required>
               <option value="">Select A House</option>
               {
                 houses.length > 0 ? (

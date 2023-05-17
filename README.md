@@ -20,6 +20,7 @@
    - [Prerequisites](#prerequisites)
    - [Install](#install)
    - [Usage](#usage)
+ - [📃 Kanban Board](#kanban-board)
  - [👥 Authors](#authors)
  - [🔭 Future Features](#future-features)
  - [🤝 Contributing](#contributing)
@@ -74,13 +75,15 @@
  - [x] A code editor like Visual Studio Code with Node.
  
  You can check if Git is installed by running the following command in the terminal.
- 
+
+ ```
  $ git --version
+ ```
  
  Likewise for `node` and `npm` for package installation.
- 
+ ```
  $ node --version && npm --version
- 
+ ```
  *Note: This project is built with `Ruby` version 3.1.3*
  ### Setup
  
@@ -89,25 +92,34 @@
  ### Install
  
  In the terminal, go to your file directory and run this command.
- 
+ ```
  $ git clone https://github.com/PrangonGhose/Earthbnb_frontend
+ ```
  ### Get into development
  
  In the terminal, run these commands to get into development.
- 
+ ```
  $ cd Earthbnb_frontend
  
  $ npm install (install dependencies)
- 
+ ```
  **Note: You need to start the `rails server` first to ensure proper use of the frontend. So make sure you have followed the instructions available on [Earthbnb_backend](https://github.com/PrangonGhose/Earthbnb_backend).**
- 
+ ```
  $ npm run dev
+ ```
  ### Usage <a href="usage" name="usage"></a>
  
  This website is applicable for both mobile and desktop version.
  
  <p align="right">(<a href="#readme-top">back to top</a>)</p>
  
+ <!-- Kanban Board -->
+ 
+ ## 📃 Kanban Board <a name="kanban-board"></a>
+
+ The Kanban Board made for this project can be found [here](https://github.com/users/PrangonGhose/projects/2/views/2). The initial state of the Kanban Board can be found [here](https://user-images.githubusercontent.com/64170307/236311639-7e0ff546-f4e3-4308-ad24-4dc9de96e98c.png). There are four members in our team. Their details can be found in the [authors section](#authors).
+ <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
  <!-- AUTHORS -->
  
  ## 👥 Authors <a name="authors"></a>
