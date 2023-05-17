@@ -32,6 +32,9 @@ export default function Reserve({ loginStatus }) {
       if (isLoggedIn) {
         dispatch(getHouses());
         setUser(user);
+        if (Object.keys(house).length !== 0) {
+          setInputStartDisabled(false);
+        }
       } else {
         navigate('/');
       }
