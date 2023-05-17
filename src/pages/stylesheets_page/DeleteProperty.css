@@ -1,0 +1,52 @@
+.delete-main-container {
+  position: relative;
+  flex-grow: 1;
+  padding: 2%;
+  overflow: auto;
+}
+
+@media (max-width: 767px) {
+  .delete-main-container {
+    padding-top: 65px;
+  }
+}
+
+.delete-houses-container {
+  display: flex;
+  gap: 5%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.delete-house-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.delete-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.delete-btn {
+  align-self: center;
+  background-color: rgba(255, 127, 0, 0.9);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 127, 0, 0.9);
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  margin-top: 20px;
+}
+
+.delete-btn:active {
+  transform: scale(0.95);
+}
+
+.delete-btn:focus {
+  outline: none;
+}

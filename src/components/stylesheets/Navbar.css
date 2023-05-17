@@ -1,0 +1,179 @@
+.gen-navbar-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  transition: 0.4s ease;
+  z-index: 100;
+}
+
+.hide-navbar {
+  display: none;
+}
+
+.logo-text {
+  font-family: myFont, sans-serif;
+  color: #321811 !important;
+}
+
+.arrow-img {
+  width: 15px;
+}
+
+.back-btn {
+  align-self: flex-end;
+  margin-bottom: 40px;
+  padding: 8px;
+  padding-left: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #8db600;
+  border: none;
+  cursor: pointer;
+}
+
+.main-navbar-container {
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 15px;
+  padding-right: 0;
+  box-shadow: 0 0 15px #d3d3d3;
+}
+
+#hide-arrow {
+  display: none;
+}
+
+.logo-container,
+.footer {
+  padding-right: 15px;
+}
+
+.nav-logo {
+  color: #000;
+}
+
+.nav-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  align-items: flex-end;
+}
+
+.active {
+  color: #fff;
+  text-decoration: none;
+  background-color: #8db600;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.social-icons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-img {
+  width: 20px;
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.inactive {
+  color: #000;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.logout-btn {
+  align-self: center;
+  background-color: rgba(255, 127, 0, 0.9);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 127, 0, 0.9);
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+}
+
+.logout-btn:active {
+  transform: scale(0.95);
+}
+
+.logout-btn:focus {
+  outline: none;
+}
+
+.footer-license {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.tb-menu {
+  transform: translateX(-300px);
+  transition: 0.4s;
+  font-size: 0.1px;
+}
+
+.display-none {
+  transform: translateX(0);
+  transition: 0.4s;
+}
+
+.main-navbar-container button {
+  transform: translateX(0);
+  transition: 0.4s;
+}
+
+#navbar {
+  transition: 0.4s ease-in-out;
+}
+
+/* styles for screens smaller than 1500px */
+@media (max-width: 767px) {
+  .gen-navbar-container {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    bottom: 0;
+  }
+
+  .hide-navbar {
+    display: block;
+  }
+
+  .tb-menu {
+    display: block;
+    position: fixed;
+    left: 0;
+    font-size: 3rem;
+    color: #a2b859;
+    z-index: 122;
+    transform: translateX(0);
+    transition: 0.4s;
+    margin-left: 1rem;
+  }
+
+  .logo-container {
+    margin-top: 3rem;
+    visibility: hidden;
+  }
+
+  .show-navbar {
+    left: 0;
+  }
+
+  .black {
+    color: black;
+  }
+}
