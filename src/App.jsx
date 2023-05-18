@@ -50,7 +50,7 @@ function App() {
   return (
     <div className="App container-fluid p-0">
       <div className="d-flex p-0 vh-100">
-        {location.pathname !== '/' && location.pathname !== '/Register' && location.pathname !== '/Login' && <Navbar handleLogout={handleLogout} />}
+        {location.pathname !== '/' && <Navbar handleLogout={handleLogout} />}
         <Routes>
           <Route exact path="/" element={<SplashScreen loginStatus={loginStatus} />} />
           <Route path="/home" element={<Mainpage />} />
