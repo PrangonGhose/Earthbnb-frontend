@@ -10,7 +10,7 @@ import { getHousesById } from '../redux/house/house';
 export default function HouseDetail() {
   const { id } = useParams();
   const houseArr = useSelector((state) => state.houses);
-  const [house, setHouse] = useState({})
+  const [house, setHouse] = useState({});
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -21,7 +21,7 @@ export default function HouseDetail() {
 
   useEffect(() => {
     dispatch(getHousesById(id));
-    setHouse(houseArr[0])
+    setHouse(houseArr[0]);
   }, [houseArr, dispatch]);
 
   return (
