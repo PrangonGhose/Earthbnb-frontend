@@ -15,6 +15,7 @@
    - [🛠 Built With](#built-with)
      - [Key Features](#key-features)
      - [Live Demo](#live-demo)
+     - [User Interface](#ui)
  - [💻 Getting Started](#getting-started)
    - [Setup](#setup)
    - [Prerequisites](#prerequisites)
@@ -64,6 +65,16 @@
  ## 🚀 Live Demo <a name="live-demo"></a>
  
  Live demo is currently unavailable.
+
+ <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 📺 User Interface
+
+Take a look at the below pictures to have an idea of the User Interface
+
+| Landing Page | Primary Interface |
+| ------ | ----- |
+| <img src="./src/assets/earthbnb.jpeg"> | <img src="./src/assets/houses.jpeg"> |
  
  <!-- GETTING STARTED -->
  
