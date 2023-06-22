@@ -76,6 +76,10 @@ Take a look at the below pictures to have an idea of the User Interface
 | ------ | ----- |
 | <img src="./src/assets/earthbnb.jpeg"> | <img src="./src/assets/houses.jpeg"> |
  
+| My Reservation | Reserve a House |
+| ------ | ----- |
+| <img src="./src/assets/reservation.jpeg"> | <img src="./src/assets/reserve.jpeg"> |
+
  <!-- GETTING STARTED -->
  
  ## 💻 Getting Started
