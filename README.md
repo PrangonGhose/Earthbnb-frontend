@@ -80,6 +80,10 @@ Take a look at the below pictures to have an idea of the User Interface
 | ------ | ----- |
 | <img src="./src/assets/reservation.jpeg"> | <img src="./src/assets/reserve.jpeg"> |
 
+| Add A House | Delete a House |
+| ------ | ----- |
+| <img src="./src/assets/add.jpeg"> | <img src="./src/assets/delete.jpeg"> |
+
  <!-- GETTING STARTED -->
  
  ## 💻 Getting Started
