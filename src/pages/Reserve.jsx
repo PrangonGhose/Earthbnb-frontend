@@ -61,7 +61,7 @@ export default function Reserve({ loginStatus }) {
     const startingDates = [];
     const endingDates = [];
     const range = [];
-    const response = await fetch(`http://localhost:3000/houses/${house.id}`);
+    const response = await fetch(`https://earthbnb-1n7m.onrender.com/houses/${house.id}`);
     let data = await response.json();
     [data] = data;
 
@@ -144,7 +144,7 @@ export default function Reserve({ loginStatus }) {
       ending_date: reservationEndDate,
     };
 
-    const response = await fetch('http://localhost:3000/reservations/', {
+    const response = await fetch('https://earthbnb-1n7m.onrender.com/reservations/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
