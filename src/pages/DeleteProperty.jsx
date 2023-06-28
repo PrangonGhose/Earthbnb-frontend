@@ -14,7 +14,7 @@ function DeleteProperty() {
   }, [dispatch]);
 
   const handleDelete = async (houseId) => {
-    await fetch(`http://127.0.0.1:3000/houses/${houseId}`, {
+    await fetch(`https://earthbnb-1n7m.onrender.com/houses/${houseId}`, {
       method: 'DELETE',
     });
     dispatch(getHouses());
