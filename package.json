@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://prangonghose.github.io/Earthbnb-frontend",
+  "homepage": "https://prangonghose.github.io/earthbnb",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -13,7 +13,7 @@
     "stylelint": "npx stylelint \"**/*.{css,scss}\"",
     "test": "jest --passWithNoTests",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
