@@ -64,7 +64,9 @@
  
  ## 🚀 Live Demo <a name="live-demo"></a>
  
- Live demo is currently unavailable.
+ Live demo is available [here](https://prangonghose.github.io/Earthbnb-frontend/).
+
+ **N.B: As the API is hosted on a free database, it might take a few minutes for loggin in and signing up. Reservation may be faulty due to lag of return status from the API.**
 
  <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
