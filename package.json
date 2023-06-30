@@ -2,8 +2,7 @@
   "name": "earthbnb-frontend",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
-  "homepage": "https://prangonghose.github.io/earthbnb",
+  "homepage": "https://prangonghose.github.io/Earthbnb-frontend/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
