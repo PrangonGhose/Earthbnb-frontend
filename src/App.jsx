@@ -53,7 +53,7 @@ function App() {
         {location.pathname !== '/' && <Navbar handleLogout={handleLogout} />}
         <Routes>
           <Route exact path="/" element={<SplashScreen loginStatus={loginStatus} />} />
-          <Route path="/home" element={<Mainpage />} />
+          <Route exact path="/home" element={<Mainpage />} />
           <Route exact path="/house/:id" element={<HouseDetail />} />
           <Route exact path="/reserve" element={<Reserve loginStatus={loginStatus} />} />
           <Route exact path="/myreservations" element={<MyReservations loginStatus={loginStatus} />} />
