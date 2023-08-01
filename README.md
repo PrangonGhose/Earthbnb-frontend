@@ -33,7 +33,7 @@
  
  # 📖 Project Name
  
- ## EarthBnb Frontend User Interface
+ ## EarthBnb Frontend
  
  ## About this project
  
