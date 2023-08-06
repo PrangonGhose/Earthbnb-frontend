@@ -72,7 +72,7 @@
 
 ## 📺 User Interface
 
-Take a look at the below pictures to have an idea of the User Interface
+Take a look at the below pictures to have an idea of the User Interface.
 
 | Landing Page | Primary Interface |
 | ------ | ----- |
