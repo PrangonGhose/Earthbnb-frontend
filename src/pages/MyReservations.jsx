@@ -39,9 +39,9 @@ export default function MyReservations({ loginStatus }) {
               reservations.length > 0 ? (
                 reservations.map((reservation) => (
                   <ReservationTr
-                    key={reservation.id}
-                    id={reservation.id}
-                    name={reservation.house.house_name}
+                    key={reservation._id}
+                    id={reservation._id}
+                    name={reservation.house_id.house_name}
                     startingDate={reservation.starting_date}
                     endingDate={reservation.ending_date}
                   />

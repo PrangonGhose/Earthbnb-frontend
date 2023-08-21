@@ -61,7 +61,7 @@ export default function Reserve({ loginStatus }) {
     const startingDates = [];
     const endingDates = [];
     const range = [];
-    const response = await fetch(`https://earthbnb-1n7m.onrender.com/houses/${house.id}`);
+    const response = await fetch(`http://localhost:3000/houses/${house._id}`);
     let data = await response.json();
     [data] = data;
 
@@ -93,7 +93,7 @@ export default function Reserve({ loginStatus }) {
     if (event.target.value !== '') {
       setHouse({
         ...house,
-        id: event.target.value,
+        _id: event.target.value,
         house_name: event.target.name,
       });
       setInputStartDisabled(false);
@@ -136,15 +136,14 @@ export default function Reserve({ loginStatus }) {
         return;
       }
     }
-
     const newReservation = {
-      user_id: user.id,
-      house_id: house.id,
+      user_id: user._id,
+      house_id: house._id,
       starting_date: reservationStartDate,
       ending_date: reservationEndDate,
     };
 
-    const response = await fetch('https://earthbnb-1n7m.onrender.com/reservations/', {
+    const response = await fetch('http://localhost:3000/reservations/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -178,15 +177,15 @@ export default function Reserve({ loginStatus }) {
             unparalleled elegance.
           </p>
           <form className="form_container" onSubmit={handleSubmit}>
-            <select id="houses" name="houses" className="select_house mt-3" value={house.id || ''} onChange={handleHouseChange} required>
+            <select id="houses" name="houses" className="select_house mt-3" value={house._id || ''} onChange={handleHouseChange} required>
               <option value="">Select A House</option>
               {
                 houses.length > 0 ? (
                   houses.map((house) => (
                     <Option
-                      key={house.id}
+                      key={house._id}
                       name={house.house_name}
-                      id={house.id}
+                      id={house._id}
                     />
                   ))
                 ) : (

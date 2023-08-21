@@ -14,7 +14,7 @@ function DeleteProperty() {
   }, [dispatch]);
 
   const handleDelete = async (houseId) => {
-    await fetch(`https://earthbnb-1n7m.onrender.com/houses/${houseId}`, {
+    await fetch(`http://localhost:3000/houses/${houseId}`, {
       method: 'DELETE',
     });
     dispatch(getHouses());
@@ -27,9 +27,9 @@ function DeleteProperty() {
         <h1 className="delete-title">What Property Do You Wish To Delete?</h1>
         <div className="delete-houses-container">
           {houses.map((house) => (
-            <div className="delete-house-container" key={house.id}>
+            <div className="delete-house-container" key={house._id}>
               <House
-                id={house.id}
+                id={house._id}
                 name={house.house_name}
                 pictures={house.picture}
                 description={house.description}
@@ -37,7 +37,7 @@ function DeleteProperty() {
               <button
                 type="button"
                 className="delete-btn"
-                onClick={() => handleDelete(house.id)}
+                onClick={() => handleDelete(house._id)}
               >
                 Delete
               </button>
