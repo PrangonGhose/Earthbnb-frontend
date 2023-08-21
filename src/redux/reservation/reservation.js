@@ -6,7 +6,7 @@ export const getReservations = createAsyncThunk(
   async (user) => {
     const response = await axios({
       method: 'get',
-      url: `https://earthbnb-1n7m.onrender.com/reservations/${user.username}`,
+      url: `http://localhost:3000/reservations/${user.username}`,
     });
 
     return response.data;

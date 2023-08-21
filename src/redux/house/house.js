@@ -4,7 +4,7 @@ import axios from 'axios';
 export const getHouses = createAsyncThunk(
   'houses/getHouses',
   async () => {
-    const respond = await axios.get('https://earthbnb-1n7m.onrender.com/houses/');
+    const respond = await axios.get('http://localhost:3000/houses/');
     return respond.data;
   },
 );
@@ -12,7 +12,7 @@ export const getHouses = createAsyncThunk(
 export const getHousesById = createAsyncThunk(
   'houses/getHouseById',
   async (id) => {
-    const respond = await axios.get(`https://earthbnb-1n7m.onrender.com/houses/${id}`);
+    const respond = await axios.get(`http://localhost:3000/houses/${id}`);
     return respond.data;
   },
 );
@@ -21,7 +21,7 @@ export const createHouse = createAsyncThunk(
   'houses/create',
   async (houseData) => {
     try {
-      const response = await fetch('https://earthbnb-1n7m.onrender.com/houses', {
+      const response = await fetch('http://localhost:3000/houses', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
