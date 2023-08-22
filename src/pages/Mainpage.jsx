@@ -67,7 +67,6 @@ export default function Mainpage() {
   };
 
   const handleClickLeftArrow = () => {
-    // console.log(visibleHouses, initalHouse);
     if (visibleHouses - initalHouse > 0) {
       const screenWidth = window.innerWidth;
       if (screenWidth < 990) {
@@ -110,7 +109,7 @@ export default function Mainpage() {
         {houses.slice(visibleHouses - initalHouse, visibleHouses).map((house) => (
           <House
             key={uuidv4()}
-            id={house.id}
+            id={house._id}
             name={house.house_name}
             pictures={house.picture}
             description={house.description}
