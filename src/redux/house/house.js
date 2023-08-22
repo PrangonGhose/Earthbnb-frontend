@@ -9,14 +9,6 @@ export const getHouses = createAsyncThunk(
   },
 );
 
-export const getHousesById = createAsyncThunk(
-  'houses/getHouseById',
-  async (id) => {
-    const respond = await axios.get(`http://localhost:3000/houses/${id}`);
-    return respond.data;
-  },
-);
-
 export const createHouse = createAsyncThunk(
   'houses/create',
   async (houseData) => {
@@ -49,7 +41,6 @@ const housesSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getHouses.fulfilled, (state, action) => (action.payload))
-      .addCase(getHousesById.fulfilled, (state, action) => (action.payload));
   },
 });
 
