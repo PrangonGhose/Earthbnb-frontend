@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { string, number } from 'prop-types';
+import { string } from 'prop-types';
 import Socials from './Socials';
 import './stylesheets/house.css';
 
@@ -26,6 +26,6 @@ export default function House(props) {
 House.propTypes = {
   name: string.isRequired,
   description: string.isRequired,
-  id: number.isRequired,
+  id: string.isRequired,
   pictures: string.isRequired,
 };
