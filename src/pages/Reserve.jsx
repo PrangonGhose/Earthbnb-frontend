@@ -63,7 +63,8 @@ export default function Reserve({ loginStatus }) {
     const range = [];
     const response = await fetch(`http://localhost:3000/houses/${house._id}`);
     let data = await response.json();
-    [data] = data;
+    // const data = [dataRes]
+    console.log(data);
 
     for (let i = 0; i < data.reservations.length; i += 1) {
       startingDates.push(data.reservations[i].starting_date);
@@ -126,11 +127,13 @@ export default function Reserve({ loginStatus }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-    const reservationStartDate = startDate.toLocaleString('ja-JP', options).replace(/\//g, '-');
-    const reservationEndDate = endDate.toLocaleString('ja-JP', options).replace(/\//g, '-');
+    const reservationStartDate = startDate;//.toLocaleString('ja-JP', options).replace(/\//g, '-')
+    const reservationEndDate = endDate;//.toLocaleString('ja-JP', options).replace(/\//g, '-')
+    console.log(reservationStartDate);
+    console.log(reservationEndDate);
 
     for (let i = 0; i < disabledDates.length; i += 1) {
-      if (reservationStartDate < disabledDates[i].toLocaleString('ja-JP', options).replace(/\//g, '-') && reservationEndDate > disabledDates[i].toLocaleString('ja-JP', options).replace(/\//g, '-')) {
+      if (reservationStartDate < disabledDates[i] && reservationEndDate > disabledDates[i]) {
         setStatus('The house is already reserved in this date range');
         setEndDate(null);
         return;
