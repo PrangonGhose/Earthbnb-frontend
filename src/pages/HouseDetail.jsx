@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './stylesheets_page/HouseDetail.css';
 import { AiOutlineRight, AiOutlineRightCircle } from 'react-icons/ai';
 import color from '../assets/c-color.png';
 import HideShowMenu from '../components/HideShowMenu';
-import { getHousesById } from '../redux/house/house';
+import { getHouseById } from '../redux/house/houseDetail';
 
 export default function HouseDetail() {
   const { id } = useParams();
-  const houseArr = useSelector((state) => state.houses);
-  const [house, setHouse] = useState({});
+  const house = useSelector((state) => state.houseDetail);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -20,9 +19,8 @@ export default function HouseDetail() {
   };
 
   useEffect(() => {
-    dispatch(getHousesById(id));
-    setHouse(houseArr[0]);
-  }, [houseArr, dispatch]);
+    dispatch(getHouseById(id));
+  }, [dispatch]);
 
   return (
     <div className="house-detail-container d-flex">
