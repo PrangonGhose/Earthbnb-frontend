@@ -1,10 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import baseApiUrl from '../../../server';
 
 export const getHouses = createAsyncThunk(
   'houses/getHouses',
   async () => {
-    const respond = await axios.get('http://localhost:3000/houses/');
+    const respond = await axios.get(`${baseApiUrl}/houses`);
     return respond.data;
   },
 );
@@ -13,7 +14,7 @@ export const createHouse = createAsyncThunk(
   'houses/create',
   async (houseData) => {
     try {
-      const response = await fetch('http://localhost:3000/houses', {
+      const response = await fetch(`${baseApiUrl}/houses`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

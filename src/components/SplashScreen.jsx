@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { func } from 'prop-types';
 import pic from '../assets/username.png';
+import baseApiUrl from '../../server';
 import './stylesheets/SplashScreen.css';
 
 export default function SplashScreen({ loginStatus }) {
@@ -43,7 +44,7 @@ export default function SplashScreen({ loginStatus }) {
 
   const handleLogin = async (event) => {
     event.preventDefault();
-    const response = await fetch('http://localhost:3000/login/', {
+    const response = await fetch(`${baseApiUrl}/login/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -70,7 +71,7 @@ export default function SplashScreen({ loginStatus }) {
 
   const handleRegister = async (event) => {
     event.preventDefault();
-    const response = await fetch('http://localhost:3000/users/', {
+    const response = await fetch(`${baseApiUrl}/users/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

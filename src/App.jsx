@@ -9,6 +9,7 @@ import AddProperty from './pages/AddProperty';
 import DeleteProperty from './pages/DeleteProperty';
 import HouseDetail from './pages/HouseDetail';
 import Mainpage from './pages/Mainpage';
+import baseApiUrl from '../server';
 import './App.css';
 import './components/stylesheets/hideShowMenu.css';
 
@@ -19,7 +20,7 @@ function App() {
   const loginStatus = async () => {
     if (sessionStorage.getItem('earthbnb_user')) {
       const tempUser = JSON.parse(sessionStorage.getItem('earthbnb_user'));
-      const response = await fetch('http://localhost:3000/login/', {
+      const response = await fetch(`${baseApiUrl}/login/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

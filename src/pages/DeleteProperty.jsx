@@ -4,6 +4,7 @@ import { getHouses } from '../redux/house/house';
 import House from '../components/House';
 import './stylesheets_page/DeleteProperty.css';
 import HideShowMenu from '../components/HideShowMenu';
+import baseApiUrl from '../../server';
 
 function DeleteProperty() {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ function DeleteProperty() {
   }, [dispatch]);
 
   const handleDelete = async (houseId) => {
-    await fetch(`http://localhost:3000/houses/${houseId}`, {
+    await fetch(`${baseApiUrl}/houses/${houseId}`, {
       method: 'DELETE',
     });
     dispatch(getHouses());

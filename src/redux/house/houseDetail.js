@@ -1,10 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import baseApiUrl from '../../../server';
 
 export const getHouseById = createAsyncThunk(
   'houseDetail/getHouseById',
   async (id) => {
-    const respond = await axios.get(`http://localhost:3000/houses/${id}`);
+    const respond = await axios.get(`${baseApiUrl}/houses/${id}`);
     return respond.data;
   },
 );
