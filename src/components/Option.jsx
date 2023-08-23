@@ -1,5 +1,5 @@
 import React from 'react';
-import { number, string } from 'prop-types';
+import { string } from 'prop-types';
 
 export default function Option({ name, id }) {
   return (
@@ -9,5 +9,5 @@ export default function Option({ name, id }) {
 
 Option.propTypes = {
   name: string.isRequired,
-  id: number.isRequired,
+  id: string.isRequired,
 };
