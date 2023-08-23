@@ -12,6 +12,17 @@ export default function MyReservations({ loginStatus }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const formatDate = (inputDate) => {
+    const date = new Date(inputDate);
+
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1; // Months are zero-based
+    const day = date.getDate();
+
+    const formattedDate = `${day}-${month}-${year}`;
+    return formattedDate
+  }
+
   useEffect(() => {
     (async () => {
       const { isLoggedIn, user } = await loginStatus();
@@ -37,15 +48,18 @@ export default function MyReservations({ loginStatus }) {
             </li>
             {
               reservations.length > 0 ? (
-                reservations.map((reservation) => (
-                  <ReservationTr
+                reservations.map((reservation) => {
+                  const start_date = formatDate(reservation.starting_date);
+                  const end_date = formatDate(reservation.ending_date);
+
+                  return <ReservationTr
                     key={reservation._id}
                     id={reservation._id}
                     name={reservation.house_id.house_name}
-                    startingDate={reservation.starting_date}
-                    endingDate={reservation.ending_date}
+                    startingDate={start_date}
+                    endingDate={end_date}
                   />
-                ))
+                })
               ) : (
                 <li className="table-row">
                   <div className="col" data-label="House">No Reservations</div>
