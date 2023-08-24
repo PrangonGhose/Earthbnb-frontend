@@ -1,4 +1,4 @@
 //require('dotenv').config();
-const baseApiUrl = process.env.BASE_URL
+const baseApiUrl = import.meta.env.VITE_BASE_URL
 
 export default baseApiUrl
