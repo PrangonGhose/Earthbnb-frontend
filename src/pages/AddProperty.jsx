@@ -15,6 +15,7 @@ function AddProperty() {
     picture: '',
     price_by_night: '',
     description: '',
+    publisher: ''
   };
 
   const [formData, setFormData] = useState(initialFormData);
@@ -22,15 +23,17 @@ function AddProperty() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    const userData = JSON.parse(sessionStorage.getItem("earthbnb_user"));
+    const username = userData.username;
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,
+      publisher: `${username}`
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     dispatch(createHouse(formData));
 
     setFormData(initialFormData); // Reset the form data after successful submission
