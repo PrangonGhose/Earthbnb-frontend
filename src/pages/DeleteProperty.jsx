@@ -8,7 +8,11 @@ import baseApiUrl from '../../server';
 
 function DeleteProperty() {
   const dispatch = useDispatch();
-  const houses = useSelector((state) => state.houses);
+  const housesData = useSelector((state) => state.houses);
+  const userData = sessionStorage.getItem("earthbnb_user");
+  const user = JSON.parse(userData);
+  const username = user.username;
+  const houses = housesData.filter(house => house.publisher === username)
 
   useEffect(() => {
     dispatch(getHouses());
