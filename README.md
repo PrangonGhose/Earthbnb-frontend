@@ -37,7 +37,7 @@
  
  ## About this project
  
- This web application is built to enable users browser through different houses which they can reserve on choice basis. The users can add their own houses to let other users reserve that for extra income. Users can register an account to use the website with full access with a unique username. The whole application is built in two major parts. The [Earthbnb_backend](https://github.com/PrangonGhose/Earthbnb-backend) holds code for the API backend that returns and handles the database on API request from the frontend of this website. The [Earthbnb_frontend](https://github.com/PrangonGhose/Earthbnb-frontend) contains the user interface of the website where the users can interact with the database. The backend of the website is created with `Ruby on Rails API` and the frontend is created with `ReactJS` and `Redux`.
+ This web application is built to enable users browser through different houses which they can reserve on choice basis. The users can add their own houses to let other users reserve that for extra income. Users can register an account to use the website with full access with a unique username. The whole application is built in two major parts. The [Earthbnb_backend](https://github.com/ShinhyoBelok/earthbnb-backend-js) holds code for the API backend that returns and handles the database on API request from the frontend of this website. The [Earthbnb_frontend](https://github.com/PrangonGhose/Earthbnb-frontend) contains the user interface of the website where the users can interact with the database. The backend of the website is created with `Ruby on Rails API` and the frontend is created with `ReactJS` and `Redux`.
  
  ## 🛠 Built With <a name="built-with"></a>
  
